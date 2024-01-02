@@ -6,6 +6,7 @@ class Contact(models.Model):
     whatsapp = models.CharField(max_length=15, verbose_name = "Ватсап")
     inst = models.URLField(verbose_name = "инстаграм")
     email = models.EmailField(verbose_name = "Электронная почта")
+    address = models.CharField(max_length=100, verbose_name = "Адрес")
 
     def __str__(self):
         return self.phone_number

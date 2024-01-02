@@ -1,28 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<title>Glance |  HTML Template | Home Page 01</title>
-<!-- Stylesheets -->
-<link href="css/all.min.css" rel="stylesheet">
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/slick.css" rel="stylesheet">
-<link href="css/slick-theme.css" rel="stylesheet">
-<link href="css/swiper-bundle.min.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
-
-<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-<link rel="icon" href="images/favicon.png" type="image/x-icon">
-
-<!-- Responsive -->
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
-<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
-</head>
-
-<body>
-
+{% extends 'include/homepage.html' %}
+{% load static %}
+{% block content %}
 
 <div class="page-wrapper home1">
     
@@ -31,62 +9,15 @@
     <!-- Preloader -->
     <div class="loading">
         <div class="loading-text">
-            <span class="loading-text-words">L</span>
-            <span class="loading-text-words">O</span>
-            <span class="loading-text-words">A</span>
-            <span class="loading-text-words">D</span>
+            <span class="loading-text-words">S</span>
             <span class="loading-text-words">I</span>
-            <span class="loading-text-words">N</span>
-            <span class="loading-text-words">G</span>
+            <span class="loading-text-words">M</span>
+            <span class="loading-text-words">B</span>
+            <span class="loading-text-words">A</span>
+
         </div>
     </div>
-
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <a href="index.html" title="">
-                        <img src="images/logo.png" alt="" /> 
-                    </a>
-                </div>
-                <div class="header-social">
-                    <a href="#" title="" class="share-btn"><i class="flaticon-share"></i></a>
-                    <div class="banner-social">
-                        <h3>social media</h3>
-                        <ul class="social-links">
-                            <li><a href="#" title=""><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#" title=""><i class="fab fa-instagram"></i></a></li>
-                            <li><a href="#" title=""><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#" title=""><i class="fab fa-youtube"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <ul class="menu-other-links">
-                    <li>
-                        <a href="#" title="" class="search-btn">
-                            <img src="images/search.png" alt="" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" title="" class="cart-btn">
-                            <img src="images/cart.png" alt="" /> 
-                            <span class="cart-number">5</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="login.html" title=""><img src="images/user.svg" alt="" /></a>
-                    </li>
-                </ul>
-                <div class="menu">
-                    <div class="menu-btn">
-                        <span class="bar1"></span>
-                        <span class="bar2"></span>
-                        <span class="bar3"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+    {% include 'include/header.html' %}
 
     <div class="cart-sidebar">
         <div class="cart-sidebar-header">
@@ -141,7 +72,7 @@
                 <li>
                     <div class="cart-product-column">
                         <div class="card-product-thumb-sd">
-                            <img src="images/resource/cr1.jpg" alt="" />
+                            <img src="{% static 'images/resource/cr1.jpg' %}" alt="" />
                         </div>
                         <div class="card-product-thumb-info">
                             <a href="#" title="" class="close-cart-product">
@@ -173,7 +104,7 @@
                 <li>
                     <div class="cart-product-column">
                         <div class="card-product-thumb-sd">
-                            <img src="images/resource/cr2.jpg" alt="" />
+                            <img src="{% static 'images/resource/cr2.jpg' %}" alt="" />
                         </div>
                         <div class="card-product-thumb-info">
                             <a href="#" title="" class="close-cart-product">
@@ -205,7 +136,7 @@
                 <li>
                     <div class="cart-product-column">
                         <div class="card-product-thumb-sd">
-                            <img src="images/resource/cr3.jpg" alt="" />
+                            <img src="{% static 'images/resource/cr3.jpg' %}" alt="" />
                         </div>
                         <div class="card-product-thumb-info">
                             <a href="#" title="" class="close-cart-product">
@@ -237,7 +168,7 @@
                 <li>
                     <div class="cart-product-column">
                         <div class="card-product-thumb-sd">
-                            <img src="images/resource/cr4.jpg" alt="" />
+                            <img src="{% static 'images/resource/cr4.jpg' %}" alt="" />
                         </div>
                         <div class="card-product-thumb-info">
                             <a href="#" title="" class="close-cart-product">
@@ -270,7 +201,7 @@
         </div>
         <div class="cart-footer">
             <p><span>Congratulations!</span> You’ve got free shipping</p>
-            <img src="images/progress.png" alt="" />
+            <img src="{% static 'images/progress.png' %}" alt="" />
             <div class="product-price-total">
                 <strong>Subtotal</strong>
                 <span>$1,547.00.00</span>
@@ -297,7 +228,7 @@
                     <button type="submit"><i class="fa fa-search"></i></button>
                 </div>
             </form>
-            <a href="#" title="" class="close-search"><img src="images/close2.png" alt="" /></a>
+            <a href="#" title="" class="close-search"><img src="{% static 'images/close2.png' %}" alt="" /></a>
         </div>
     </div>
 
@@ -339,12 +270,12 @@
                 </ul>
             </li>
             <li>
-                <a href="contact.html" title="">contact us</a>
+                <a href="{% url 'contact' %}" title="">contact us</a>
             </li>
             <li>
                 <a href="#" title="">Pages</a>
                 <ul>
-                    <li><a href="about.html" title="">About</a></li>
+                    <li><a href="{% url 'about' %}" title="">About</a></li>
                     <li><a href="faqs.html" title="">FAQs</a></li>
                     <li><a href="signup.html" title="">Sign up</a></li>
                     <li><a href="login.html" title="">Login</a></li>
@@ -367,11 +298,11 @@
 
     <div class="popup coming-soon-popup">
         <a href="#" title="" class="close-popup">
-            <img src="images/close2.png" alt="" />
+            <img src="{% static 'images/close2.png' %}" alt="" />
         </a>
         <div class="row">
             <div class="col-lg-6 image-popup">
-                <img src="images/resource/p-img2.jpg" alt="" />
+                <img src="{% static 'images/resource/p-img2.jpg' %}" alt="" />
             </div>
             <div class="col-lg-6 popup-content">
                 <div class="inner-column">
@@ -411,19 +342,19 @@
     <div class="shop-single-section popup-quick-view">
         <div class="shop-product-single">
             <a href="#" title="" class="close-popup">
-                <img src="images/close2.png" alt="" />
+                <img src="{% static 'images/close2.png' %}" alt="" />
             </a>
             <div class="shop-product-main-image">
                 <span class="pr-bar">new</span>
                 <div class="cart-product-large-slider">
                     <div class="cart-product-large-image">
-                        <img src="images/resource/jacket1.png" alt="" />
+                        <img src="{% static 'images/resource/jacket1.png' %}" alt="" />
                     </div>
                     <div class="cart-product-large-image">
-                        <img src="images/resource/jacket2.png" alt="" />
+                        <img src="{% static 'images/resource/jacket2.png' %}" alt="" />
                     </div>
                     <div class="cart-product-large-image">
-                        <img src="images/resource/jacket3.png" alt="" />
+                        <img src="{% static 'images/resource/jacket3.png' %}" alt="" />
                     </div>
                 </div>
             </div>
@@ -492,17 +423,17 @@
                 </div>
                 <div class="cart-product-thumb-slider">
                     <div class="cart-product-thumb">
-                        <img src="images/resource/jacket1.png" alt="" />
+                        <img src="{% static 'images/resource/jacket1.png' %}" alt="" />
                     </div>
                     <div class="cart-product-thumb">
-                        <img src="images/resource/jacket2.png" alt="" />
+                        <img src="{% static 'images/resource/jacket2.png' %}" alt="" />
                     </div>
                     <div class="cart-product-thumb">
-                        <img src="images/resource/jacket3.png" alt="" />
+                        <img src="{% static 'images/resource/jacket3.png' %}" alt="" />
                     </div>
                 </div>
                 <div class="promo">
-                    <img src="images/vt.png" alt="" />
+                    <img src="{% static 'images/vt.png' %}" alt="" />
                     50% off Studiofit Light Grey Hooded Jacket code FGLPW245
                 </div>
             </div>
@@ -512,33 +443,16 @@
     <section class="main-slider-v2">
         <div class="slider-nav">
             <div class="main-slider-slide">
-                <img src="images/resource/main-banner1.jpg" alt=""  class="animated" data-animation-in="zoomInImage" />
+                {% for slide in slide %}
+                <img src="{{slide.image.url}}" alt=""  class="animated" data-animation-in="zoomInImage" />
                 <div class="main-slider-content">
-                    <span>Haute Couture</span>
-                    <h1>New Arrivals</h1>
-                    <p>Porem ipsum dolor sit amet consectetur </p>
+                    <span>{{slide.mini_description}}</span>
+                    <h1>{{slide.title}}</h1>
+                    <p>{{slide.descriptions}}</p>
                     <a href="shop-single.html" title="" class="theme-btn">buy now</a>
                 </div>
-            </div><!--main-slider-slide-->
-            <div class="main-slider-slide">
-                <img src="images/resource/main-banner2.jpg" alt=""  class="animated" data-animation-in="zoomInImage" />
-                <div class="main-slider-content">
-                    <span>Haute Couture</span>
-                    <h1>New Arrivals</h1>
-                    <p>Porem ipsum dolor sit amet consectetur </p>
-                    <a href="shop-single.html" title="" class="theme-btn">buy now</a>
-                </div>
-            </div><!--main-slider-slide-->
-            <div class="main-slider-slide">
-                <img src="images/resource/main-banner3.jpg" alt=""  class="animated" data-animation-in="zoomInImage" />
-                <div class="main-slider-content">
-                    <span>Haute Couture</span>
-                    <h1>New Arrivals</h1>
-                    <p>Porem ipsum dolor sit amet consectetur </p>
-                    <a href="shop-single.html" title="" class="theme-btn">buy now</a>
-                </div>
-            </div><!--main-slider-slide-->
-        </div>
+                {% endfor %}
+           
         <div class="slider-dots-box"></div>
     </section><!--main-slider-->
     
@@ -546,7 +460,8 @@
     <section class="about-section-v2">
         <div class="container">
             <div class="about-content-v2">
-                <h2>Style is the <img src="images/resource/c1.png" alt="" /> perfection  <img src="images/resource/c2.png" alt="" /> point of view <img src="images/resource/c3.png" alt="" /></h2>
+                <h2>Style is the  perfection</h2>
+                <h2> point of view</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus leo sit amet lorem egestas iaculis. Donec nibh enim, pharetra vel turpis non, vulputate luctus ex. Phasellus pharetra ut dolor ac rutrum. Curabitur molestie nec mi in congue. Nam luctus ante quis urna molestie, ut venenatis diam sagittis. Nam ligula velit, </p>
                 <a href="about.html" title="" class="theme-btn">about more</a>
             </div>
@@ -559,22 +474,22 @@
                 <div class="lookbook-v2 row">
                     <div class="col-lg-3 col-md-3 col-sm-3 col-3">
                         <div class="lookbook-inner wow fadeIn" data-wow-delay="200ms">
-                            <img src="images/resource/book1.jpg" alt="" />
+                            <img src="{% static 'images/resource/book1.jpg' %}" alt="" />
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-3 col-3">
                         <div class="lookbook-inner wow fadeIn" data-wow-delay="400ms">
-                            <img src="images/resource/book2.jpg" alt="" />
+                            <img src="{% static 'images/resource/book2.jpg' %}" alt="" />
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-3 col-3">
                         <div class="lookbook-inner wow fadeIn" data-wow-delay="600ms">
-                            <img src="images/resource/book3.jpg" alt="" />
+                            <img src="{% static 'images/resource/book3.jpg' %}" alt="" />
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-3 col-3">
                         <div class="lookbook-inner wow fadeIn" data-wow-delay="800ms">
-                            <img src="images/resource/book4.jpg" alt="" />
+                            <img src="{% static 'images/resource/book4.jpg' %}" alt="" />
                         </div>
                     </div>
 
@@ -605,7 +520,7 @@
                                     <div class="col-lg-6 col-md-6">
                                         <div class="category-v2">
                                             <div class="category-v2-img">
-                                                <img src="images/resource/gallery1.jpg" alt="" />
+                                                <img src="{% static 'images/resource/gallery1.jpg' %}" alt="" />
                                             </div>
                                             <h3><a href="shop-single.html" title="">Men Clothing</a></h3>
                                         </div>
@@ -613,7 +528,7 @@
                                     <div class="col-lg-6 col-md-6">
                                         <div class="category-v2">
                                             <div class="category-v2-img">
-                                                <img src="images/resource/gallery2.jpg" alt="" />
+                                                <img src="{% static 'images/resource/gallery2.jpg' %}" alt="" />
                                             </div>
                                             <h3><a href="shop-single.html" title="">Men's Grooming</a></h3>
                                         </div>
@@ -621,7 +536,7 @@
                                     <div class="col-lg-4 col-md-4">
                                         <div class="category-v2">
                                             <div class="category-v2-img">
-                                                <img src="images/resource/gallery3.jpg" alt="" />
+                                                <img src="{% static 'images/resource/gallery3.jpg' %}" alt="" />
                                             </div>
                                             <h3><a href="shop-single.html" title="">Innerwear & Loungewear</a></h3>
                                         </div>
@@ -629,7 +544,7 @@
                                     <div class="col-lg-4 col-md-4">
                                         <div class="category-v2">
                                             <div class="category-v2-img">
-                                                <img src="images/resource/gallery4.jpg" alt="" />
+                                                <img src="{% static 'images/resource/gallery4.jpg' %}" alt="" />
                                             </div>
                                             <h3><a href="shop-single.html" title="">Accessories</a></h3>
                                         </div>
@@ -637,7 +552,7 @@
                                     <div class="col-lg-4 col-md-4">
                                         <div class="category-v2">
                                             <div class="category-v2-img">
-                                                <img src="images/resource/gallery5.jpg" alt="" />
+                                                <img src="{% static 'images/resource/gallery5.jpg' %}" alt="" />
                                             </div>
                                             <h3><a href="shop-single.html" title="">Sunglasses</a></h3>
                                         </div>
@@ -651,7 +566,7 @@
                                     <div class="col-lg-6 col-md-6">
                                         <div class="category-v2">
                                             <div class="category-v2-img">
-                                                <img src="images/resource/gallery1.jpg" alt="" />
+                                                <img src="{% static 'images/resource/gallery1.jpg' %}" alt="" />
                                             </div>
                                             <h3><a href="shop-single.html" title="">Men Clothing</a></h3>
                                         </div>
@@ -659,7 +574,7 @@
                                     <div class="col-lg-6 col-md-6">
                                         <div class="category-v2">
                                             <div class="category-v2-img">
-                                                <img src="images/resource/gallery2.jpg" alt="" />
+                                                <img src="{% static 'images/resource/gallery2.jpg' %}" alt="" />
                                             </div>
                                             <h3><a href="shop-single.html" title="">Men's Grooming</a></h3>
                                         </div>
@@ -667,7 +582,7 @@
                                     <div class="col-lg-4 col-md-4">
                                         <div class="category-v2">
                                             <div class="category-v2-img">
-                                                <img src="images/resource/gallery3.jpg" alt="" />
+                                                <img src="{% static 'images/resource/gallery3.jpg' %}" alt="" />
                                             </div>
                                             <h3><a href="shop-single.html" title="">Innerwear & Loungewear</a></h3>
                                         </div>
@@ -675,7 +590,7 @@
                                     <div class="col-lg-4 col-md-4">
                                         <div class="category-v2">
                                             <div class="category-v2-img">
-                                                <img src="images/resource/gallery4.jpg" alt="" />
+                                                <img src="{% static 'images/resource/gallery4.jpg' %}" alt="" />
                                             </div>
                                             <h3><a href="shop-single.html" title="">Accessories</a></h3>
                                         </div>
@@ -683,7 +598,7 @@
                                     <div class="col-lg-4 col-md-4">
                                         <div class="category-v2">
                                             <div class="category-v2-img">
-                                                <img src="images/resource/gallery5.jpg" alt="" />
+                                                <img src="{% static 'images/resource/gallery5.jpg' %}" alt="" />
                                             </div>
                                             <h3><a href="shop-single.html" title="">Sunglasses</a></h3>
                                         </div>
@@ -697,7 +612,7 @@
                                     <div class="col-lg-6 col-md-6">
                                         <div class="category-v2">
                                             <div class="category-v2-img">
-                                                <img src="images/resource/gallery1.jpg" alt="" />
+                                                <img src="{% static 'images/resource/gallery1.jpg' %}" alt="" />
                                             </div>
                                             <h3><a href="shop-single.html" title="">Men Clothing</a></h3>
                                         </div>
@@ -705,7 +620,7 @@
                                     <div class="col-lg-6 col-md-6">
                                         <div class="category-v2">
                                             <div class="category-v2-img">
-                                                <img src="images/resource/gallery2.jpg" alt="" />
+                                                <img src="{% static 'images/resource/gallery2.jpg' %}" alt="" />
                                             </div>
                                             <h3><a href="shop-single.html" title="">Men's Grooming</a></h3>
                                         </div>
@@ -713,7 +628,7 @@
                                     <div class="col-lg-4 col-md-4">
                                         <div class="category-v2">
                                             <div class="category-v2-img">
-                                                <img src="images/resource/gallery3.jpg" alt="" />
+                                                <img src="{% static 'images/resource/gallery3.jpg' %}" alt="" />
                                             </div>
                                             <h3><a href="shop-single.html" title="">Innerwear & Loungewear</a></h3>
                                         </div>
@@ -721,7 +636,7 @@
                                     <div class="col-lg-4 col-md-4">
                                         <div class="category-v2">
                                             <div class="category-v2-img">
-                                                <img src="images/resource/gallery4.jpg" alt="" />
+                                                <img src="{% static 'images/resource/gallery4.jpg' %}" alt="" />
                                             </div>
                                             <h3><a href="shop-single.html" title="">Accessories</a></h3>
                                         </div>
@@ -729,7 +644,7 @@
                                     <div class="col-lg-4 col-md-4">
                                         <div class="category-v2">
                                             <div class="category-v2-img">
-                                                <img src="images/resource/gallery5.jpg" alt="" />
+                                                <img src="{% static 'images/resource/gallery5.jpg' %}" alt="" />
                                             </div>
                                             <h3><a href="shop-single.html" title="">Sunglasses</a></h3>
                                         </div>
@@ -743,7 +658,7 @@
                                     <div class="col-lg-6 col-md-6">
                                         <div class="category-v2">
                                             <div class="category-v2-img">
-                                                <img src="images/resource/gallery1.jpg" alt="" />
+                                                <img src="{% static 'images/resource/gallery1.jpg' %}" alt="" />
                                             </div>
                                             <h3><a href="shop-single.html" title="">Men Clothing</a></h3>
                                         </div>
@@ -751,7 +666,7 @@
                                     <div class="col-lg-6 col-md-6">
                                         <div class="category-v2">
                                             <div class="category-v2-img">
-                                                <img src="images/resource/gallery2.jpg" alt="" />
+                                                <img src="{% static 'images/resource/gallery2.jpg' %}" alt="" />
                                             </div>
                                             <h3><a href="shop-single.html" title="">Men's Grooming</a></h3>
                                         </div>
@@ -759,7 +674,7 @@
                                     <div class="col-lg-4 col-md-4">
                                         <div class="category-v2">
                                             <div class="category-v2-img">
-                                                <img src="images/resource/gallery3.jpg" alt="" />
+                                                <img src="{% static 'images/resource/gallery3.jpg' %}" alt="" />
                                             </div>
                                             <h3><a href="shop-single.html" title="">Innerwear & Loungewear</a></h3>
                                         </div>
@@ -767,7 +682,7 @@
                                     <div class="col-lg-4 col-md-4">
                                         <div class="category-v2">
                                             <div class="category-v2-img">
-                                                <img src="images/resource/gallery4.jpg" alt="" />
+                                                <img src="{% static 'images/resource/gallery4.jpg' %}" alt="" />
                                             </div>
                                             <h3><a href="shop-single.html" title="">Accessories</a></h3>
                                         </div>
@@ -775,7 +690,7 @@
                                     <div class="col-lg-4 col-md-4">
                                         <div class="category-v2">
                                             <div class="category-v2-img">
-                                                <img src="images/resource/gallery5.jpg" alt="" />
+                                                <img src="{% static 'images/resource/gallery5.jpg' %}" alt="" />
                                             </div>
                                             <h3><a href="shop-single.html" title="">Sunglasses</a></h3>
                                         </div>
@@ -789,7 +704,7 @@
                                     <div class="col-lg-6 col-md-6">
                                         <div class="category-v2">
                                             <div class="category-v2-img">
-                                                <img src="images/resource/gallery1.jpg" alt="" />
+                                                <img src="{% static 'images/resource/gallery1.jpg' %}" alt="" />
                                             </div>
                                             <h3><a href="shop-single.html" title="">Men Clothing</a></h3>
                                         </div>
@@ -797,7 +712,7 @@
                                     <div class="col-lg-6 col-md-6">
                                         <div class="category-v2">
                                             <div class="category-v2-img">
-                                                <img src="images/resource/gallery2.jpg" alt="" />
+                                                <img src="{% static 'images/resource/gallery2.jpg' %}" alt="" />
                                             </div>
                                             <h3><a href="shop-single.html" title="">Men's Grooming</a></h3>
                                         </div>
@@ -805,7 +720,7 @@
                                     <div class="col-lg-4 col-md-4">
                                         <div class="category-v2">
                                             <div class="category-v2-img">
-                                                <img src="images/resource/gallery3.jpg" alt="" />
+                                                <img src="{% static 'images/resource/gallery3.jpg' %}" alt="" />
                                             </div>
                                             <h3><a href="shop-single.html" title="">Innerwear & Loungewear</a></h3>
                                         </div>
@@ -813,7 +728,7 @@
                                     <div class="col-lg-4 col-md-4">
                                         <div class="category-v2">
                                             <div class="category-v2-img">
-                                                <img src="images/resource/gallery4.jpg" alt="" />
+                                                <img src="{% static 'images/resource/gallery4.jpg' %}" alt="" />
                                             </div>
                                             <h3><a href="shop-single.html" title="">Accessories</a></h3>
                                         </div>
@@ -821,7 +736,7 @@
                                     <div class="col-lg-4 col-md-4">
                                         <div class="category-v2">
                                             <div class="category-v2-img">
-                                                <img src="images/resource/gallery5.jpg" alt="" />
+                                                <img src="{% static 'images/resource/gallery5.jpg' %}" alt="" />
                                             </div>
                                             <h3><a href="shop-single.html" title="">Sunglasses</a></h3>
                                         </div>
@@ -835,7 +750,7 @@
                                     <div class="col-lg-6 col-md-6">
                                         <div class="category-v2">
                                             <div class="category-v2-img">
-                                                <img src="images/resource/gallery1.jpg" alt="" />
+                                                <img src="{% static 'images/resource/gallery1.jpg' %}" alt="" />
                                             </div>
                                             <h3><a href="shop-single.html" title="">Men Clothing</a></h3>
                                         </div>
@@ -843,7 +758,7 @@
                                     <div class="col-lg-6 col-md-6">
                                         <div class="category-v2">
                                             <div class="category-v2-img">
-                                                <img src="images/resource/gallery2.jpg" alt="" />
+                                                <img src="{% static 'images/resource/gallery2.jpg' %}" alt="" />
                                             </div>
                                             <h3><a href="shop-single.html" title="">Men's Grooming</a></h3>
                                         </div>
@@ -851,7 +766,7 @@
                                     <div class="col-lg-4 col-md-4">
                                         <div class="category-v2">
                                             <div class="category-v2-img">
-                                                <img src="images/resource/gallery3.jpg" alt="" />
+                                                <img src="{% static 'images/resource/gallery3.jpg' %}" alt="" />
                                             </div>
                                             <h3><a href="shop-single.html" title="">Innerwear & Loungewear</a></h3>
                                         </div>
@@ -859,7 +774,7 @@
                                     <div class="col-lg-4 col-md-4">
                                         <div class="category-v2">
                                             <div class="category-v2-img">
-                                                <img src="images/resource/gallery4.jpg" alt="" />
+                                                <img src="{% static 'images/resource/gallery4.jpg' %}" alt="" />
                                             </div>
                                             <h3><a href="shop-single.html" title="">Accessories</a></h3>
                                         </div>
@@ -867,7 +782,7 @@
                                     <div class="col-lg-4 col-md-4">
                                         <div class="category-v2">
                                             <div class="category-v2-img">
-                                                <img src="images/resource/gallery5.jpg" alt="" />
+                                                <img src="{% static 'images/resource/gallery5.jpg' %}" alt="" />
                                             </div>
                                             <h3><a href="shop-single.html" title="">Sunglasses</a></h3>
                                         </div>
@@ -914,7 +829,7 @@
                             </div>
                         </div>
                         <div class="product-view-image">
-                            <img src="images/resource/product-img1.png" alt="" />
+                            <img src="{% static 'images/resource/product-img1.png' %}" alt="" />
                         </div>
                     </div><!--product-view-slides-->
                     <div class="product-view-slide">
@@ -940,7 +855,7 @@
                             </div>
                         </div>
                         <div class="product-view-image">
-                            <img src="images/resource/product-img3.png" alt="" />
+                            <img src="{% static 'images/resource/product-img3.png' %}" alt="" />
                         </div>
                     </div><!--product-view-slides-->
                     <div class="product-view-slide">
@@ -966,7 +881,7 @@
                             </div>
                         </div>
                         <div class="product-view-image">
-                            <img src="images/resource/product-img1.png" alt="" />
+                            <img src="{% static 'images/resource/product-img1.png' %}" alt="" />
                         </div>
                     </div><!--product-view-slides-->
                 </div><!--product-view-slider-->
@@ -990,7 +905,7 @@
                 <div class="col-lg-2">
                     <div class="product-cat">
                         <div class="product-img">
-                            <img src="images/resource/ct1.jpg" alt="">
+                            <img src="{% static 'images/resource/ct1.jpg' %}" alt="">
                             <span class="pro-category">new</span>
                         </div>
                         <div class="product-hover-info">
@@ -999,7 +914,7 @@
                                     <li>new</li>
                                     <li>sales</li>
                                 </ul>
-                                <a href="#" title="" class="fvrt-product"><img src="images/icons/heart.svg" alt="" /></a>
+                                <a href="#" title="" class="fvrt-product"><img src="{% static 'images/icons/heart.svg' %}" alt="" /></a>
                             </div>
                             <div class="product-info-hover">
                                 <h3><a href="shop-single.html" title="">Casual Jacket</a></h3>
@@ -1033,7 +948,7 @@
                 <div class="col-lg-2">
                     <div class="product-cat">
                         <div class="product-img">
-                            <img src="images/resource/ct2.jpg" alt="">
+                            <img src="{% static 'images/resource/ct2.jpg' %}" alt="">
                             <span class="pro-category">new</span>
                         </div>
                         <div class="product-hover-info">
@@ -1042,7 +957,7 @@
                                     <li>new</li>
                                     <li>sales</li>
                                 </ul>
-                                <a href="#" title="" class="fvrt-product"><img src="images/icons/heart.svg" alt="" /></a>
+                                <a href="#" title="" class="fvrt-product"><img src="{% static 'images/icons/heart.svg' %}" alt="" /></a>
                             </div>
                             <div class="product-info-hover">
                                 <h3><a href="shop-single.html" title="">Casual Jacket</a></h3>
@@ -1076,7 +991,7 @@
                 <div class="col-lg-2">
                     <div class="product-cat">
                         <div class="product-img">
-                            <img src="images/resource/col1.jpg" alt="">
+                            <img src="{% static 'images/resource/col1.jpg' %}" alt="">
                             <span class="pro-category">new</span>
                         </div>
                         <div class="product-hover-info">
@@ -1085,7 +1000,7 @@
                                     <li>new</li>
                                     <li>sales</li>
                                 </ul>
-                                <a href="#" title="" class="fvrt-product"><img src="images/icons/heart.svg" alt="" /></a>
+                                <a href="#" title="" class="fvrt-product"><img src="{% static 'images/icons/heart.svg' %}" alt="" /></a>
                             </div>
                             <div class="product-info-hover">
                                 <h3><a href="shop-single.html" title="">Casual Jacket</a></h3>
@@ -1119,7 +1034,7 @@
                 <div class="col-lg-2">
                     <div class="product-cat">
                         <div class="product-img">
-                            <img src="images/resource/ct4.jpg" alt="">
+                            <img src="{% static 'images/resource/ct4.jpg' %}" alt="">
                             <span class="pro-category">new</span>
                         </div>
                         <div class="product-hover-info">
@@ -1128,7 +1043,7 @@
                                     <li>new</li>
                                     <li>sales</li>
                                 </ul>
-                                <a href="#" title="" class="fvrt-product"><img src="images/icons/heart.svg" alt="" /></a>
+                                <a href="#" title="" class="fvrt-product"><img src="{% static 'images/icons/heart.svg' %}" alt="" /></a>
                             </div>
                             <div class="product-info-hover">
                                 <h3><a href="shop-single.html" title="">Casual Jacket</a></h3>
@@ -1162,7 +1077,7 @@
                 <div class="col-lg-2">
                     <div class="product-cat">
                         <div class="product-img">
-                            <img src="images/resource/ct5.jpg" alt="">
+                            <img src="{% static 'images/resource/ct5.jpg' %}" alt="">
                             <span class="pro-category">new</span>
                         </div>
                         <div class="product-hover-info">
@@ -1171,7 +1086,7 @@
                                     <li>new</li>
                                     <li>sales</li>
                                 </ul>
-                                <a href="#" title="" class="fvrt-product"><img src="images/icons/heart.svg" alt="" /></a>
+                                <a href="#" title="" class="fvrt-product"><img src="{% static 'images/icons/heart.svg' %}" alt="" /></a>
                             </div>
                             <div class="product-info-hover">
                                 <h3><a href="shop-single.html" title="">Casual Jacket</a></h3>
@@ -1205,7 +1120,7 @@
                 <div class="col-lg-2">
                     <div class="product-cat">
                         <div class="product-img">
-                            <img src="images/resource/ct6.jpg" alt="">
+                            <img src="{% static 'images/resource/ct6.jpg' %}" alt="">
                             <span class="pro-category">new</span>
                         </div>
                         <div class="product-hover-info">
@@ -1214,7 +1129,7 @@
                                     <li>new</li>
                                     <li>sales</li>
                                 </ul>
-                                <a href="#" title="" class="fvrt-product"><img src="images/icons/heart.svg" alt="" /></a>
+                                <a href="#" title="" class="fvrt-product"><img src="{% static 'images/icons/heart.svg' %}" alt="" /></a>
                             </div>
                             <div class="product-info-hover">
                                 <h3><a href="shop-single.html" title="">Casual Jacket</a></h3>
@@ -1248,7 +1163,7 @@
                 <div class="col-lg-2">
                     <div class="product-cat">
                         <div class="product-img">
-                            <img src="images/resource/ct7.jpg" alt="">
+                            <img src="{% static 'images/resource/ct7.jpg' %}" alt="">
                             <span class="pro-category">new</span>
                         </div>
                         <div class="product-hover-info">
@@ -1257,7 +1172,7 @@
                                     <li>new</li>
                                     <li>sales</li>
                                 </ul>
-                                <a href="#" title="" class="fvrt-product"><img src="images/icons/heart.svg" alt="" /></a>
+                                <a href="#" title="" class="fvrt-product"><img src="{% static 'images/icons/heart.svg' %}" alt="" /></a>
                             </div>
                             <div class="product-info-hover">
                                 <h3><a href="shop-single.html" title="">Casual Jacket</a></h3>
@@ -1291,7 +1206,7 @@
                 <div class="col-lg-2">
                     <div class="product-cat">
                         <div class="product-img">
-                            <img src="images/resource/ct8.jpg" alt="">
+                            <img src="{% static 'images/resource/ct8.jpg' %}" alt="">
                             <span class="pro-category">new</span>
                         </div>
                         <div class="product-hover-info">
@@ -1300,7 +1215,7 @@
                                     <li>new</li>
                                     <li>sales</li>
                                 </ul>
-                                <a href="#" title="" class="fvrt-product"><img src="images/icons/heart.svg" alt="" /></a>
+                                <a href="#" title="" class="fvrt-product"><img src="{% static 'images/icons/heart.svg' %}" alt="" /></a>
                             </div>
                             <div class="product-info-hover">
                                 <h3><a href="shop-single.html" title="">Casual Jacket</a></h3>
@@ -1334,7 +1249,7 @@
                 <div class="col-lg-2">
                     <div class="product-cat">
                         <div class="product-img">
-                            <img src="images/resource/ct9.jpg" alt="">
+                            <img src="{% static 'images/resource/ct9.jpg' %}" alt="">
                             <span class="pro-category">new</span>
                         </div>
                         <div class="product-hover-info">
@@ -1343,7 +1258,7 @@
                                     <li>new</li>
                                     <li>sales</li>
                                 </ul>
-                                <a href="#" title="" class="fvrt-product"><img src="images/icons/heart.svg" alt="" /></a>
+                                <a href="#" title="" class="fvrt-product"><img src="{% static 'images/icons/heart.svg' %}" alt="" /></a>
                             </div>
                             <div class="product-info-hover">
                                 <h3><a href="shop-single.html" title="">Casual Jacket</a></h3>
@@ -1377,7 +1292,7 @@
                 <div class="col-lg-2">
                     <div class="product-cat">
                         <div class="product-img">
-                            <img src="images/resource/ct10.jpg" alt="">
+                            <img src="{% static 'images/resource/ct10.jpg' %}" alt="">
                             <span class="pro-category">new</span>
                         </div>
                         <div class="product-hover-info">
@@ -1386,7 +1301,7 @@
                                     <li>new</li>
                                     <li>sales</li>
                                 </ul>
-                                <a href="#" title="" class="fvrt-product"><img src="images/icons/heart.svg" alt="" /></a>
+                                <a href="#" title="" class="fvrt-product"><img src="{% static 'images/icons/heart.svg' %}" alt="" /></a>
                             </div>
                             <div class="product-info-hover">
                                 <h3><a href="shop-single.html" title="">Casual Jacket</a></h3>
@@ -1439,7 +1354,7 @@
                     <div class="testi2-slide">
                         <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. In luctus leo sit amet lorem egestas iaculis. Donec nibh enim, pharetra vel turpis</p>
                         <div class="testi2-info">
-                            <img src="images/resource/author1.png" alt="" />
+                            <img src="{% static 'images/resource/author1.png' %}" alt="" />
                             <h4>Arbaz Ali</h4>
                         </div>
                     </div><!--testi2-slide-->
@@ -1448,7 +1363,7 @@
                     <div class="testi2-slide">
                         <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. In luctus leo sit amet lorem egestas iaculis. Donec nibh enim, pharetra vel turpis</p>
                         <div class="testi2-info">
-                            <img src="images/resource/author2.png" alt="" />
+                            <img src="{% static 'images/resource/author2.png' %}" alt="" />
                             <h4>Arbaz Ali</h4>
                         </div>
                     </div><!--testi2-slide-->
@@ -1457,7 +1372,7 @@
                     <div class="testi2-slide">
                         <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. In luctus leo sit amet lorem egestas iaculis. Donec nibh enim, pharetra vel turpis</p>
                         <div class="testi2-info">
-                            <img src="images/resource/author3.png" alt="" />
+                            <img src="{% static 'images/resource/author3.png' %}" alt="" />
                             <h4>Arbaz Ali</h4>
                         </div>
                     </div><!--testi2-slide-->
@@ -1466,7 +1381,7 @@
                     <div class="testi2-slide">
                         <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. In luctus leo sit amet lorem egestas iaculis. Donec nibh enim, pharetra vel turpis</p>
                         <div class="testi2-info">
-                            <img src="images/resource/author1.png" alt="" />
+                            <img src="{% static 'images/resource/author1.png' %}" alt="" />
                             <h4>Arbaz Ali</h4>
                         </div>
                     </div><!--testi2-slide-->
@@ -1475,7 +1390,7 @@
                     <div class="testi2-slide">
                         <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. In luctus leo sit amet lorem egestas iaculis. Donec nibh enim, pharetra vel turpis</p>
                         <div class="testi2-info">
-                            <img src="images/resource/author2.png" alt="" />
+                            <img src="{% static 'images/resource/author2.png' %}" alt="" />
                             <h4>Arbaz Ali</h4>
                         </div>
                     </div><!--testi2-slide-->
@@ -1484,7 +1399,7 @@
                     <div class="testi2-slide">
                         <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. In luctus leo sit amet lorem egestas iaculis. Donec nibh enim, pharetra vel turpis</p>
                         <div class="testi2-info">
-                            <img src="images/resource/author3.png" alt="" />
+                            <img src="{% static 'images/resource/author3.png' %}" alt="" />
                             <h4>Arbaz Ali</h4>
                         </div>
                     </div><!--testi2-slide-->
@@ -1502,10 +1417,10 @@
             <div class="trending-slider wow slideInUp">
                 <div class="trending-slide">
                     <div class="trending-img">
-                        <img src="images/resource/trending1.jpg" alt="" />
+                        <img src="{% static 'images/resource/trending1.jpg' %}" alt="" />
                         <div class="trending-caption-v2">
                             <div class="trending-thumb">
-                                <img src="images/resource/trending2.jpg" alt="" />
+                                <img src="{% static 'images/resource/trending2.jpg' %}" alt="" />
                             </div>
                             <h3><a href="shop-single.html" title="">Sunglasses</a></h3>
                             <p>Lorem ipsum dolor sit amet, consectetur </p>
@@ -1515,7 +1430,7 @@
                         </div>
                     </div>
                     <div class="trending-img-v2">
-                        <img src="images/resource/trending3.png" alt="" />
+                        <img src="{% static 'images/resource/trending3.png' %}" alt="" />
                         <div class="featured-hover">
                             <span class="hvr"></span>
                             <div class="hvr-content">
@@ -1579,19 +1494,19 @@
         <div class="container">
             <div class="pt-logos">
                 <div class="pt-logo wow fadeIn">
-                    <img src="images/resource/pt1.png" alt="" />
+                    <img src="{% static 'images/resource/pt1.png' %}" alt="" />
                 </div>
                 <div class="pt-logo wow fadeIn" data-wow-delay="300ms">
-                    <img src="images/resource/pt2.png" alt="" />
+                    <img src="{% static 'images/resource/pt2.png' %}" alt="" />
                 </div>
                 <div class="pt-logo wow fadeIn" data-wow-delay="500ms">
-                    <img src="images/resource/pt3.png" alt="" />
+                    <img src="{% static 'images/resource/pt3.png' %}" alt="" />
                 </div>
                 <div class="pt-logo wow fadeIn" data-wow-delay="700ms">
-                    <img src="images/resource/pt4.png" alt="" />
+                    <img src="{% static 'images/resource/pt4.png' %}" alt="" />
                 </div>
                 <div class="pt-logo wow fadeIn" data-wow-delay="900ms">
-                    <img src="images/resource/pt5.png" alt="" />
+                    <img src="{% static 'images/resource/pt5.png' %}" alt="" />
                 </div>
             </div>
         </div>
@@ -1600,7 +1515,7 @@
     <section class="collection-new">
         <div class="container-fluid">
             <div class="title-clt wow slideInUp">
-                <h2>The joy <img src="images/resource/cl1.png" alt="" /> of dressing <img src="images/resource/cl2.png" alt="" /> is an art</h2>
+                <h2>The joy <img src="{% static 'images/resource/cl1.png' %}" alt="" /> of dressing <img src="{% static 'images/resource/cl2.png' %}" alt="" /> is an art</h2>
             </div>
             <div class="flex-container wow slideInUp">
                 <div class="flex-slide accessories">
@@ -1672,25 +1587,25 @@
                          </div>
                          <div class="cart-product-slider-slide">
                             <div class="cart-product-slide">
-                                <img src="images/resource/product1.png" alt="" />
+                                <img src="{% static 'images/resource/product1.png' %}" alt="" />
                             </div>
                             <div class="cart-product-slide">
-                                <img src="images/resource/product2.png" alt="" />
+                                <img src="{% static 'images/resource/product2.png' %}" alt="" />
                             </div>
                             <div class="cart-product-slide">
-                                <img src="images/resource/product3.png" alt="" />
+                                <img src="{% static 'images/resource/product3.png' %}" alt="" />
                             </div>
                         </div>
                     </div>
                     <div class="cart-slider-thumb wow slideInLeft">
                         <div class="cart-product-thumb-slide">
-                            <img src="images/resource/product2.jpg" alt="" />
+                            <img src="{% static 'images/resource/product2.jpg' %}" alt="" />
                         </div>
                         <div class="cart-product-thumb-slide">
-                            <img src="images/resource/product-2.jpg" alt="" />
+                            <img src="{% static 'images/resource/product-2.jpg' %}" alt="" />
                         </div>
                         <div class="cart-product-thumb-slide">
-                            <img src="images/resource/product-3.jpg" alt="" />
+                            <img src="{% static 'images/resource/product-3.jpg' %}" alt="" />
                         </div>
                     </div>
                 </div><!--card-product-thumb-slider-->
@@ -1731,17 +1646,17 @@
             <div class="blog-posts">
                 <div class="post wow fadeInLeft">
                     <div class="post-thumb">
-                        <img src="images/resource/blog1.jpg" alt="" />
+                        <img src="{% static 'images/resource/blog1.jpg' %}" alt="" />
                     </div>
                     <div class="post-info">
                         <h3><a href="blog-single.html" title="">Nearly 13 Million US Children Infected Since Covid Pandemic</a></h3>
                         <ul class="meta">
                             <li>
-                                <img src="images/icons/icon5.svg" alt="" />
+                                <img src="{% static 'images/icons/icon5.svg' %}" alt="" />
                                 <a href="#" title="">08 July 2022</a>
                             </li>
                             <li>
-                                <img src="images/icons/icon6.svg" alt="" />
+                                <img src="{% static 'images/icons/icon6.svg' %}" alt="" />
                                 <a href="#" title="">07:41 PM IST</a>
                             </li>
                         </ul>
@@ -1749,17 +1664,17 @@
                 </div><!--post-->
                 <div class="post wow fadeInLeft" data-wow-delay="200ms">
                     <div class="post-thumb">
-                        <img src="images/resource/blog2.jpg" alt="" />
+                        <img src="{% static 'images/resource/blog2.jpg' %}" alt="" />
                     </div>
                     <div class="post-info">
                         <h3><a href="blog-single.html" title="">Nearly 13 Million US Children Infected Since Covid Pandemic</a></h3>
                         <ul class="meta">
                             <li>
-                                <img src="images/icons/icon5.svg" alt="" />
+                                <img src="{% static 'images/icons/icon5.svg' %}" alt="" />
                                 <a href="#" title="">08 July 2022</a>
                             </li>
                             <li>
-                                <img src="images/icons/icon6.svg" alt="" />
+                                <img src="{% static 'images/icons/icon6.svg' %}" alt="" />
                                 <a href="#" title="">07:41 PM IST</a>
                             </li>
                         </ul>
@@ -1767,17 +1682,17 @@
                 </div><!--post-->
                 <div class="post wow fadeInLeft" data-wow-delay="400ms">
                     <div class="post-thumb">
-                        <img src="images/resource/blog3.jpg" alt="" />
+                        <img src="{% static 'images/resource/blog3.jpg' %}" alt="" />
                     </div>
                     <div class="post-info">
                         <h3><a href="blog-single.html" title="">Nearly 13 Million US Children Infected Since Covid Pandemic</a></h3>
                         <ul class="meta">
                             <li>
-                                <img src="images/icons/icon5.svg" alt="" />
+                                <img src="{% static 'images/icons/icon5.svg' %}" alt="" />
                                 <a href="#" title="">08 July 2022</a>
                             </li>
                             <li>
-                                <img src="images/icons/icon6.svg" alt="" />
+                                <img src="{% static 'images/icons/icon6.svg' %}" alt="" />
                                 <a href="#" title="">07:41 PM IST</a>
                             </li>
                         </ul>
@@ -1785,17 +1700,17 @@
                 </div><!--post-->
                 <div class="post wow fadeInLeft" data-wow-delay="600ms">
                     <div class="post-thumb">
-                        <img src="images/resource/blog4.jpg" alt="" />
+                        <img src="{% static 'images/resource/blog4.jpg' %}" alt="" />
                     </div>
                     <div class="post-info">
                         <h3><a href="blog-single.html" title="">Nearly 13 Million US Children Infected Since Covid Pandemic</a></h3>
                         <ul class="meta">
                             <li>
-                                <img src="images/icons/icon5.svg" alt="" />
+                                <img src="{% static 'images/icons/icon5.svg' %}" alt="" />
                                 <a href="#" title="">08 July 2022</a>
                             </li>
                             <li>
-                                <img src="images/icons/icon6.svg" alt="" />
+                                <img src="{% static 'images/icons/icon6.svg' %}" alt="" />
                                 <a href="#" title="">07:41 PM IST</a>
                             </li>
                         </ul>
@@ -1803,17 +1718,17 @@
                 </div><!--post-->
                 <div class="post wow fadeInLeft" data-wow-delay="800ms">
                     <div class="post-thumb">
-                        <img src="images/resource/blog5.jpg" alt="" />
+                        <img src="{% static 'images/resource/blog5.jpg' %}" alt="" />
                     </div>
                     <div class="post-info">
                         <h3><a href="blog-single.html" title="">Nearly 13 Million US Children Infected Since Covid Pandemic</a></h3>
                         <ul class="meta">
                             <li>
-                                <img src="images/icons/icon5.svg" alt="" />
+                                <img src="{% static 'images/icons/icon5.svg' %}" alt="" />
                                 <a href="#" title="">08 July 2022</a>
                             </li>
                             <li>
-                                <img src="images/icons/icon6.svg" alt="" />
+                                <img src="{% static 'images/icons/icon6.svg' %}" alt="" />
                                 <a href="#" title="">07:41 PM IST</a>
                             </li>
                         </ul>
@@ -1826,81 +1741,11 @@
         </div>
     </section><!--latest-news-section-->
 
-    <footer>
-        <div class="main-footer">
-            <h1 class="section-bg-title">Glance</h1>
-            <div class="container-fluid">
-                <div class="footer-widgets">
-                    <div class="widget widget-links wow fadeInLeft">
-                        <h3 class="widget-title">CUSTOMER SERVICE</h3>
-                        <ul class="wd-links">
-                            <li><a href="#" title="">Contact Support</a></li>
-                            <li><a href="#" title="">Track My Order</a></li>
-                            <li><a href="#" title="">Returns</a></li>
-                            <li><a href="#" title="">Accessibility</a></li>
-                        </ul>
-                    </div><!--widget-links-->
-                    <div class="widget widget-links wow fadeInLeft" data-wow-delay="200ms">
-                        <h3 class="widget-title">WEBSITE</h3>
-                        <ul class="wd-links">
-                            <li><a href="#" title="">Terms of Service</a></li>
-                            <li><a href="#" title="">Shipping & Returns</a></li>
-                            <li><a href="#" title="">Privacy Policy</a></li>
-                            <li><a href="#" title="">Affiliates</a></li>
-                        </ul>
-                    </div><!--widget-links-->
-                    <div class="widget widget-links wow fadeInLeft" data-wow-delay="400ms">
-                        <h3 class="widget-title">Glance</h3>
-                        <ul class="wd-links">
-                            <li><a href="#" title="">Heritage</a></li>
-                            <li><a href="#" title="">Sustainability</a></li>
-                            <li><a href="#" title="">Instagram</a></li>
-                            <li><a href="#" title="">Contact Us</a></li>
-                        </ul>
-                    </div><!--widget-links-->
-                    <div class="widget widget-newsletter wow fadeInLeft" data-wow-delay="600ms">
-                        <h3 class="widget-title">NEWSLETTER</h3>
-                        <p>Subscribe and get 10% discount on your first purchase.</p>
-                        <form>
-                            <input type="email" name="email" placeholder="Email Address" />
-                            <button type="submit" class="theme-btn">subscribe</button>
-                        </form>
-                    </div><!--widget-newsletter -->
-                </div>
-            </div>
-        </div>
-        <div class="bottom-footer">
-            <div class="container">
-                <div class="copyright wow slideInUp">
-                    <p>© 2023 Glance IND - ALL RIGHTS RESERVED</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    {% include 'include/footer.html' %}
     
 
 </div><!-- End Page Wrapper -->
 
 <!-- Scroll To Top -->
 <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
-
-<script src="js/jquery.js"></script> 
-<script src="js/jquery-migrate-1.4.1.min.js"></script>
-<script src="js/slick.min.js"></script>
-<script src="js/slick-animation.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.fancybox.js"></script>
-<script src="js/wow.js"></script>
-<script src="js/appear.js"></script>
-<script src="js/swiper-bundle.min.js"></script>
-<script src="js/jquery.marquee.min.js"></script>
-<script src="js/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
-<script src="js/video.js"></script>
-<script src="js/script.js"></script>
-
-
-
-
-<script>(function(){var js = "window['__CF$cv$params']={r:'83f2be74e9c95b9f',t:'MTcwNDE5NTgwMi41MDMwMDA='};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();</script></body>
-</html>
+{% endblock %}
