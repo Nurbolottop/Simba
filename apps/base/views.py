@@ -13,4 +13,6 @@ def index(request):
     trend = models.Trends.objects.latest('id')
     partner = models.Partner.objects.all()
     art = models.Art.objects.all()
+    clothes_color = models.ClothesColor.objects.latest('id')
+    lastnews = models.News.objects.latest('id')
     return render(request, 'index-2.html', locals())

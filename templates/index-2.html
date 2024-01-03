@@ -449,7 +449,7 @@
                     <span>{{slide.mini_description}}</span>
                     <h1>{{slide.title}}</h1>
                     <p>{{slide.descriptions}}</p>
-                    <a href="shop-single.html" title="" class="theme-btn">buy now</a>
+                    <a href="shop-single.html" title="" class="theme-btn">Купить</a>
                 </div>
             </div>
             {% endfor %}
@@ -462,7 +462,7 @@
             <div class="about-content-v2">
                 <h2>{{style.title}}</h2>
                 <p>{{style.descriptions}}</p>
-                <a href="about.html" title="" class="theme-btn">about more</a>
+                <a href="about.html" title="" class="theme-btn">Подробнее</a>
             </div>
         </div>
     </section>
@@ -488,7 +488,7 @@
 
     <section class="marquee-section v2 web-slides">
         <div class='marquee6' data-duration='17000' data-gap='10' data-duplicated='true' >
-            <h2>The best fashion store can deliver</h2>
+            <h2>Лучший модный магазин может доставить</h2>
         </div>
     </section>
 
@@ -750,7 +750,7 @@
                     </div>
                     <!-- scrollbar -->
                     <div class="swiper-scrollbar v3">
-                        <span class="swiper-scrollbar-drag"><span class="drag-inner">DISCOVER MORE</span></span>
+                        <span class="swiper-scrollbar-drag"><span class="drag-inner">БОЛЬШЕ</span></span>
                     </div>
                 </div>
             </div>
@@ -799,7 +799,7 @@
 
     <section class="marquee-section v2">
         <div class='marquee' data-duration='17000' data-gap='10' data-duplicated='true' >
-            <h2>The best fashion store can deliver</h2>
+            <h2>Лучший модный магазин может доставить</h2>
         </div>
     </section>
 
@@ -820,7 +820,7 @@
                         <div class="product-hover-info">
                             <div class="product-hover-head">
                                 <ul class="pt-links">
-                                    <li>new</li>
+                                    <li>Новые</li>
                                     <li>прожади</li>
                                 </ul>
                                 <a href="#" title="" class="fvrt-product"><img src="{% static 'images/icons/heart.svg' %}" alt="" /></a>
@@ -983,36 +983,36 @@
                          </div>
                          <div class="cart-product-slider-slide">
                             <div class="cart-product-slide">
-                                <img src="{% static 'images/resource/product1.png' %}" alt="" />
+                                <img src="{{clothes_color.image1.url}}" alt="" />
                             </div>
                             <div class="cart-product-slide">
-                                <img src="{% static 'images/resource/product2.png' %}" alt="" />
-                            </div>
+                                <img src="{{clothes_color.image2.url}}" alt="" />
+                            </div>      
                             <div class="cart-product-slide">
-                                <img src="{% static 'images/resource/product3.png' %}" alt="" />
+                                <img src="{{clothes_color.image3.url}}" alt="" />
                             </div>
                         </div>
                     </div>
                     <div class="cart-slider-thumb wow slideInLeft">
                         <div class="cart-product-thumb-slide">
-                            <img src="{% static 'images/resource/product2.jpg' %}" alt="" />
+                            <img src="{{clothes_color.image1.url}}" alt="" />
                         </div>
                         <div class="cart-product-thumb-slide">
-                            <img src="{% static 'images/resource/product-2.jpg' %}" alt="" />
+                            <img src="{{clothes_color.image2.url}}" alt="" />
                         </div>
                         <div class="cart-product-thumb-slide">
-                            <img src="{% static 'images/resource/product-3.jpg' %}" alt="" />
+                            <img src="{{clothes_color.image3.url}}" alt="" />
                         </div>
                     </div>
                 </div><!--card-product-thumb-slider-->
                 <div class="cart-product-info-v2">
                     <div class="cart-product-content">
                         <div class="cart-product-info wow slideInRight">
-                            <h2>Studiofit Light Grey Hooded Jacket</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus leo sit amet lorem egestas iaculis. Donec nibh enim, pharetra vel turpis non, vulputate luctus ex. Phasellus pharetra ut dolor ac rutrum.</p>
+                            <h2>{{clothes_color.title}}</h2>
+                            <p>{{clothes_color.descriptions}}</p>
                             <div class="price">
-                                <span>$25.45</span>
-                                <del>$35.00</del>
+                                <span>{{clothes_color.now_price}}</span>
+                                <del>{{clothes_color.before_price}}</del>
                             </div>
                             <div class="cart-items-add">
                                 <div class="quantity">
@@ -1024,7 +1024,7 @@
                                         <i class="fa fa-minus"></i>
                                     </button>
                                 </div>
-                                <a href="shop-single.html" title="" class="theme-btn">buy now</a>
+                                <a href="shop-single.html" title="" class="theme-btn">Купить</a>
                             </div>
                         </div>
                     </div>
@@ -1036,103 +1036,34 @@
     <section class="latest-news-section">
         <div class="container-fluid">
             <div class="sec-title wow fadeInUp">
-                <h2>latest news</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus leo sit amet lorem egestas iaculis. Donec nibh enim, pharetra vel turpis</p>
+                <h2>Последние новости</h2>
+                <p>{{lastnews.descriptions}}</p>
             </div><!--sec-title-->
             <div class="blog-posts">
+                {% for lastnews in lastnews.lastnews_info.all %}
                 <div class="post wow fadeInLeft">
                     <div class="post-thumb">
-                        <img src="{% static 'images/resource/blog1.jpg' %}" alt="" />
+                        <img src="{{lastnews.image.url}}" alt="" />
                     </div>
                     <div class="post-info">
-                        <h3><a href="blog-single.html" title="">Nearly 13 Million US Children Infected Since Covid Pandemic</a></h3>
+                        <h3><a href="blog-single.html" title="">{{lastnews.mini_descriptions}}</a></h3>
                         <ul class="meta">
                             <li>
                                 <img src="{% static 'images/icons/icon5.svg' %}" alt="" />
-                                <a href="#" title="">08 July 2022</a>
+                                <a href="#" title="">{{lastnews.created_at}}</a>
                             </li>
                             <li>
                                 <img src="{% static 'images/icons/icon6.svg' %}" alt="" />
-                                <a href="#" title="">07:41 PM IST</a>
+                                <a href="#" title=""></a>
                             </li>
                         </ul>
                     </div>
                 </div><!--post-->
-                <div class="post wow fadeInLeft" data-wow-delay="200ms">
-                    <div class="post-thumb">
-                        <img src="{% static 'images/resource/blog2.jpg' %}" alt="" />
-                    </div>
-                    <div class="post-info">
-                        <h3><a href="blog-single.html" title="">Nearly 13 Million US Children Infected Since Covid Pandemic</a></h3>
-                        <ul class="meta">
-                            <li>
-                                <img src="{% static 'images/icons/icon5.svg' %}" alt="" />
-                                <a href="#" title="">08 July 2022</a>
-                            </li>
-                            <li>
-                                <img src="{% static 'images/icons/icon6.svg' %}" alt="" />
-                                <a href="#" title="">07:41 PM IST</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div><!--post-->
-                <div class="post wow fadeInLeft" data-wow-delay="400ms">
-                    <div class="post-thumb">
-                        <img src="{% static 'images/resource/blog3.jpg' %}" alt="" />
-                    </div>
-                    <div class="post-info">
-                        <h3><a href="blog-single.html" title="">Nearly 13 Million US Children Infected Since Covid Pandemic</a></h3>
-                        <ul class="meta">
-                            <li>
-                                <img src="{% static 'images/icons/icon5.svg' %}" alt="" />
-                                <a href="#" title="">08 July 2022</a>
-                            </li>
-                            <li>
-                                <img src="{% static 'images/icons/icon6.svg' %}" alt="" />
-                                <a href="#" title="">07:41 PM IST</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div><!--post-->
-                <div class="post wow fadeInLeft" data-wow-delay="600ms">
-                    <div class="post-thumb">
-                        <img src="{% static 'images/resource/blog4.jpg' %}" alt="" />
-                    </div>
-                    <div class="post-info">
-                        <h3><a href="blog-single.html" title="">Nearly 13 Million US Children Infected Since Covid Pandemic</a></h3>
-                        <ul class="meta">
-                            <li>
-                                <img src="{% static 'images/icons/icon5.svg' %}" alt="" />
-                                <a href="#" title="">08 July 2022</a>
-                            </li>
-                            <li>
-                                <img src="{% static 'images/icons/icon6.svg' %}" alt="" />
-                                <a href="#" title="">07:41 PM IST</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div><!--post-->
-                <div class="post wow fadeInLeft" data-wow-delay="800ms">
-                    <div class="post-thumb">
-                        <img src="{% static 'images/resource/blog5.jpg' %}" alt="" />
-                    </div>
-                    <div class="post-info">
-                        <h3><a href="blog-single.html" title="">Nearly 13 Million US Children Infected Since Covid Pandemic</a></h3>
-                        <ul class="meta">
-                            <li>
-                                <img src="{% static 'images/icons/icon5.svg' %}" alt="" />
-                                <a href="#" title="">08 July 2022</a>
-                            </li>
-                            <li>
-                                <img src="{% static 'images/icons/icon6.svg' %}" alt="" />
-                                <a href="#" title="">07:41 PM IST</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div><!--post-->
+                {% endfor %}
+                
             </div><!--blog-posts-->
             <div class="full-button text-center wow slideInUp">
-                <a href="#" title="" class="theme-btn">view all</a>
+                <a href="#" title="" class="theme-btn">Смотреть все</a>
             </div>
         </div>
     </section><!--latest-news-section-->

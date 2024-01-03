@@ -163,7 +163,7 @@ class Trends(models.Model):
         verbose_name = 'Главное описание'
     )
     image = models.ImageField(
-        upload_to='trends_image',
+        upload_to='trends_image/',
         verbose_name='Большое фото'
     )
     goods = models.ImageField(
@@ -171,7 +171,7 @@ class Trends(models.Model):
         verbose_name='Фото товара'
     )
     card_image = models.ImageField(
-        upload_to='card_image',
+        upload_to='card_image/',
         verbose_name='Фото внутри карточки'
     )
     title = models.CharField(
@@ -228,7 +228,7 @@ class Faqs(models.Model):
 
 class Partner(models.Model):
     image = models.ImageField(
-        upload_to='partner_image',
+        upload_to='partner_image/',
         verbose_name='Фотография '
     )
     class Meta:
@@ -257,4 +257,75 @@ class Art(models.Model):
         verbose_name_plural = 'Отделы товаров'
 
 
+class ClothesColor(models.Model):
+    image1 = models.ImageField(
+        upload_to='color_image1/',
+        verbose_name='Фото для рассветки 1 ',
+        blank=True, null=True
+    )
+    image2 = models.ImageField(
+        upload_to='color_image2/',
+        verbose_name='Фото  для рассветки 2',
+        blank=True, null=True
+    )
+    image3 = models.ImageField(
+        upload_to='color_image3/',
+        verbose_name='Фото  для рассветки 3',
+        blank=True, null=True
+    )
+    title= models.CharField(
+        max_length = 255,
+        verbose_name = 'Название товара'
+    )
+    descriptions = models.TextField(
+        verbose_name = 'Описание'
+    )
+    now_price = models.CharField(
+        max_length = 255,
+        verbose_name = 'Цена сейчас'
+    )
+    before_price = models.CharField(
+        max_length = 255,
+        verbose_name = 'Цена раньше'
+    )
 
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'Одежды с рассветкой'
+        verbose_name_plural = 'Одежды с рассветками'
+
+class News(models.Model):
+    descriptions = models.TextField(
+        verbose_name = 'Описание'
+    )
+    def __str__(self):
+        return self.descriptions
+    
+    class Meta:
+        verbose_name = 'Последняя новость'
+        verbose_name_plural = 'Последнии новости'
+
+
+class NewsInline(models.Model):
+    place_info = models.ForeignKey(News,related_name = "lastnews_info", on_delete  = models.CASCADE )
+    image = models.ImageField(
+        upload_to='news_image/',
+        verbose_name='Фотография'
+    )
+    mini_descriptions = models.TextField(
+        max_length =255,
+        verbose_name = 'Мини описание'
+    )
+    created_at = models.DateTimeField(
+        auto_now_add = True,
+        blank = True,null = True
+    )
+    class Meta:
+        unique_together = ('place_info', 'image')
+
+
+    
+
+    

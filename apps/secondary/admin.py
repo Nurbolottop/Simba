@@ -47,6 +47,24 @@ class TestimonialsFilterAdmin(admin.ModelAdmin):
     search_fields = ('mini_descriptions', )
     inlines = [TestimonialsInfoInline]
 
+class ClothesFilterAdmin(admin.ModelAdmin):
+    list_filter = ('title', )
+    list_display = ('title', 'descriptions' )
+    search_fields = ('title', 'descriptions' )
+
+class LastNewsInfoInline(admin.TabularInline):
+    model = models.NewsInline
+    extra = 1
+
+class LastNewsFilterAdmin(admin.ModelAdmin):
+    list_filter = ('descriptions', )
+    list_display = ('descriptions', )
+    search_fields = ('descriptions', )
+    inlines = [LastNewsInfoInline]
+
+
+admin.site.register(models.News, LastNewsFilterAdmin)
+admin.site.register(models.ClothesColor, ClothesFilterAdmin)
 admin.site.register(models.Art)
 admin.site.register(models.Partner)
 admin.site.register(models.Trends)
