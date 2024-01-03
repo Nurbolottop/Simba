@@ -2,6 +2,7 @@ from django.contrib import admin
 from apps.secondary import models
 # Register your models here.
 
+# nurai's register
 class StyleInfoInline(admin.TabularInline):
     model = models.StyleInfo
     extra = 1
@@ -56,3 +57,12 @@ admin.site.register(models.Glance, GlanceFilterAdmin )
 admin.site.register(models.Style, StyleFilterAdmin)
 
 
+
+# kudbuhon's register
+@admin.register(models.About)
+class AboutAdmin(admin.ModelAdmin):
+    list_display = ['title', 'description', 'image']
+
+@admin.register(models.Faqs)
+class FaqsAdmin(admin.ModelAdmin):
+    list_display = ['title', 'description', 'question', 'answer']

@@ -2,6 +2,7 @@ from django.db import models
 
 # from cke
 # Create your models here.
+
 class Style(models.Model):
     title = models.CharField(
         max_length = 255,
@@ -13,7 +14,7 @@ class Style(models.Model):
 
     def __str__(self):
         return self.title
-    
+
     class Meta:
         verbose_name = 'Стиль'
         verbose_name_plural = 'Стили'
@@ -23,6 +24,7 @@ class StyleInfo(models.Model):
     image = models.ImageField(
         verbose_name = 'Фотография',
     )
+
     class Meta:
         unique_together = ('place_info', 'image')
 
@@ -51,6 +53,8 @@ class GlanceInfo(models.Model):
         max_length = 255,
         verbose_name = "Название"
     )
+    def __str__(self):
+        return self.title
     class Meta:
         unique_together = ('place_info', 'image')
   
@@ -118,6 +122,8 @@ class CollectionInline(models.Model):
         max_length = 255,
         verbose_name = 'Размеры'
     )
+    def __str__(self):
+        return self.title
     class Meta:
         unique_together = ('place_info', 'image')
 
@@ -147,6 +153,8 @@ class TestimonialsInline(models.Model):
         max_length = 255,
         verbose_name = 'Имя клиента'
     )
+    def __str__(self):
+        return self.name
     class Meta:
         unique_together = ('place_info', 'image')
     
@@ -185,13 +193,38 @@ class Trends(models.Model):
         max_length = 255,
         verbose_name = 'Размеры'
     )
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = 'Тренд'
+        verbose_name_plural = 'Тренды'
+   
+    
+class About(models.Model):
+    title = models.CharField(max_length = 100, verbose_name = "название")
+    description = models.CharField(max_length=155, verbose_name = "описание")
+    image = models.ImageField(upload_to="image/", verbose_name="фото")
     
     def __str__(self):
         return self.title
     
     class Meta:
-        verbose_name = 'Товар Тренд'
-        verbose_name_plural = 'Товары Тренды'
+        verbose_name = "О нас"
+        verbose_name_plural = "О нас"
+
+
+class Faqs(models.Model):
+    title = models.CharField(max_length = 100, verbose_name = "название")
+    description = models.CharField(max_length=155, verbose_name = "описание")
+    question = models.CharField(max_length = 155, verbose_name = "Вопрос")
+    answer = models.TextField(verbose_name = "Ответ")
+
+    class Meta:
+        verbose_name = "Вопрос"
+        verbose_name_plural = "Вопросы"
+    
+   
 
 class Partner(models.Model):
     image = models.ImageField(
