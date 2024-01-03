@@ -293,21 +293,20 @@
     <section class="faqs-section-page">
         <div class="container">
             <div class="sec-title mw-100">
-                <h2>frequently asked qustions</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus leo sit amet lorem egestas iaculis. Donec nibh enim, pharetra vel turpis non, vulputate luctus ex. Phasellus pharetra ut dolor ac rutrum. Curabitur molestie nec mi in congue. Nam luctus ante quis urna molestie.</p>
+                <h2>{{faqs.title}}</h2>
+                <p>{{faqs.description}}</p>
             </div><!--sec-title-->
             <div class="accordion" id="accordionExample">
                 <div class="accordion-item">
                     {% for faqs in faqs_all %}
                   <h2 class="accordion-header" id="headingOne">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Does My Online Shop Need Terms and Conditions?
+                        {{faqs.question}}
                     </button>
                   </h2>
                   <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus tristique ultricies. Duis maximus convallis dolor, et tristique mauris dapibus a. Nulla convallis, est id hendrerit pulvinar, risus sapien pretium metus, et volutpat sem magna ac mauris. Cras blandit vulputate varius. Vivamus tristique finibus diam quis accumsan. Suspendisse suscipit scelerisque leo, vitae blandit ligula </p>
-                        <p>vulputate pharetra. Sed vitae sem laoreet, luctus nunc nec, feugiat augue. Donec sollicitudin tristique feugiat. Curabitur a interdum augue, scelerisque accumsan massa. Praesent tincidunt, ipsum imperdiet scelerisque porttitor, nisi ligula vehicula ipsum, a ullamcorper </p>
+                        <p>{{faqs.answer}}</p>
                     </div>
                   </div>
                 </div>
@@ -315,10 +314,10 @@
 
     <section class="marquee-section bt-0 pb-0">
         <div class='marquee' data-duration='17000' data-gap='10' data-duplicated='true' >
-            <h2>The best fashion store can deliver</h2>
+            <h2>лучшее качество вы найдете у нас</h2>
         </div>
         <div class='marquee2' data-duration='17000' data-gap='37' data-duplicated='true' >
-            <h2>The best fashion store can deliver</h2>
+            <h2>лучшее качество вы найдете у нас</h2>
         </div>
     </section>
 

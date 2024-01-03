@@ -9,3 +9,4 @@ def faqs(request):
     faqs = Faqs.objects.latest("id")
     faqs_all = Faqs.objects.all()
     return render(request, "faqs.html", locals())
+

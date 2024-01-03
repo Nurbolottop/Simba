@@ -57,7 +57,7 @@
                 <li>
                     <div class="cart-product-column">
                         <div class="card-product-thumb-sd">
-                            <img src="{% static 'images/resource/cr1.jpg" alt="" />
+                            <img src="{% static 'images/resource/cr1.jpg' %}" alt="" />
                         </div>
                         <div class="card-product-thumb-info">
                             <a href="#" title="" class="close-cart-product">
@@ -89,7 +89,7 @@
                 <li>
                     <div class="cart-product-column">
                         <div class="card-product-thumb-sd">
-                            <img src="{% static 'images/resource/cr2.jpg" alt="" />
+                            <img src="{% static 'images/resource/cr2.jpg' %}" alt="" />
                         </div>
                         <div class="card-product-thumb-info">
                             <a href="#" title="" class="close-cart-product">
@@ -121,7 +121,7 @@
                 <li>
                     <div class="cart-product-column">
                         <div class="card-product-thumb-sd">
-                            <img src="{% static 'images/resource/cr3.jpg" alt="" />
+                            <img src="{% static 'images/resource/cr3.jpg' %}" alt="" />
                         </div>
                         <div class="card-product-thumb-info">
                             <a href="#" title="" class="close-cart-product">
@@ -153,7 +153,7 @@
                 <li>
                     <div class="cart-product-column">
                         <div class="card-product-thumb-sd">
-                            <img src="{% static 'images/resource/cr4.jpg" alt="" />
+                            <img src="{% static 'images/resource/cr4.jpg' %}" alt="" />
                         </div>
                         <div class="card-product-thumb-info">
                             <a href="#" title="" class="close-cart-product">
@@ -255,13 +255,13 @@
                 </ul>
             </li>
             <li>
-                <a href="contact.html" title="">contact us</a>
+                <a href="{% url 'contact' %}" title="">contact us</a>
             </li>
             <li>
                 <a href="#" title="">Pages</a>
                 <ul>
-                    <li><a href="about.html" title="">About</a></li>
-                    <li><a href="faqs.html" title="">FAQs</a></li>
+                    <li><a href="{% url 'about' %}" title="">About</a></li>
+                    <li><a href="{% url 'faqs' %}" title="">FAQs</a></li>
                     <li><a href="signup.html" title="">Sign up</a></li>
                     <li><a href="login.html" title="">Login</a></li>
                     <li><a href="account.html" title="">account</a></li>
@@ -294,27 +294,27 @@
         <div class="container">
             <div class="about-content-v2">
                 <h2>Style is the <img src="{% static 'images/resource/c1.png' %}" alt=""> perfection  <img src="{% static 'images/resource/c2.png' %}" alt=""> point of view <img src="{% static 'images/resource/c3.png' %}" alt=""></h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus leo sit amet lorem egestas iaculis. Donec nibh enim, pharetra vel turpis non, vulputate luctus ex. Phasellus pharetra ut dolor ac rutrum. Curabitur molestie nec mi in congue. Nam luctus ante quis urna molestie, ut venenatis diam sagittis. Nam ligula velit, </p>
+                <p>{{contact.description1}}</p>
                 <ul class="contact-links-info">
                     <li>
                         <div class="ct-icon">
                             <img src="{% static 'images/ct1.png' %}" alt="" />
                         </div>
-                        <p>House No.32, MIG, Maksi Rd, Tulja Vihar, Awas Dewas, M.P</p>
+                        <p>{{contact.address}}</p>
                     </li>   
                     <li>
                         <div class="ct-icon">
                             <img src="{% static 'images/ct2.png' %}" alt="" />
                         </div>
-                        <a href="#" title="">glance@ support.com</a>
+                        <a href="#" title="">{{contact.email}}</a>
                         <a href="#" title=""><span class="__cf_email__" data-cfemail="f6919a97989593b68293979bd895999b">[email&#160;protected]</span></a>
                     </li>   
                     <li>
                         <div class="ct-icon">
                             <img src="{% static 'images/ct3.png' %}" alt="" />
                         </div>
-                        <a href="#" title="">+91 0123 456 789</a>
-                        <a href="#" title="">+32 145 789 478</a>
+                        <a href="#" title="">{{contact.phone_number}}</a>
+                        <a href="#" title="">{{contact.phone_number}}</a>
                     </li>   
                 </ul>
             </div>
@@ -330,8 +330,8 @@
     <section class="contact-form-section">
         <div class="container">
             <div class="sec-title space-v2">
-                <h2>get in touch</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus leo sit amet lorem egestas iaculis. Donec nibh enim, pharetra vel turpis</p>
+                <h2>{{contact.title}}</h2>
+                <p>{{contact.description2}}</p>
             </div>
             <form class="contact_form">
                 <div class="row">

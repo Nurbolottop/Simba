@@ -294,31 +294,31 @@
         <div class="container-fluid">
             <div class="row align-items-end about-top">
                 <div class="col-lg-6 text-column">
-                    <h2><span>GLANCE</span> Themes are compatible</h2>
+                    <h2><span>название</span> Качество и Стиль </h2>
                 </div>
                 <div class="col-lg-6 text-para">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus leo sit amet lorem egestas iaculis. Donec nibh enim, pharetra vel turpis non, vulputate luctus ex. Phasellus pharetra ut dolor ac rutrum. Curabitur molestie nec mi in congue. Nam luctus ante quis urna molestie, ut venenatis diam sagittis. Nam ligula velit, </p>
+                    <p>{{about.description}}</p>
                 </div>
             </div>
             <div class="full-image">
-                <img src="{% static 'images/resource/about-img1.jpg' %}" alt="" />
+                <img src="{{about.image1.url}}" alt="" />
             </div>
             <div class="row images-row">
                 <div class="col-lg-7">
                     <div class="row">
                         <div class="col-lg-4 col-md-4 col-sm-4 col-4 image-column">
                             <div class="image">
-                                <img src="{% static 'images/resource/abt1.jpg' %}" alt="" />
+                                <img src="{{about.image2.url}}" alt="" />
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-4 image-column">
                             <div class="image">
-                                <img src="{% static 'images/resource/abt2.jpg' %}" alt="" />
+                                <img src="{{about.image3.url}}" alt="" />
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-4 image-column">
                             <div class="image">
-                                <img src="{% static 'images/resource/abt3.jpg' %}" alt="" />
+                                <img src="{{about.image4.url}}" alt="" />
                             </div>
                         </div>
                     </div>
@@ -326,7 +326,7 @@
                 <div class="col-lg-5 title-column">
                     <div class="inner-column">
                         <h2><span>GLANCE</span> Themes are compatible with major plugins and much more!</h2>
-                        <p>Donec ullamcorper, dolor a suscipit pellentesque, justo mi facilisis quam, a ornare justo risus et felis. Morbi bibendum dapibus dapibus. Morbi euismod, leo sed</p>
+                        <p>{{about.mini_description}}</p>
                     </div>
                 </div>
             </div>
@@ -334,10 +334,10 @@
                 <h2>GLANCE Themes are compatible with major plugins and much more!</h2>
                 <div class="row">
                     <div class="col-lg-6">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae eros venenatis tellus faucibus tincidunt. Pellentesque in neque magna. Integer placerat purus nec rhoncus convallis. Nam et sodales mauris. Nulla gravida justo tellus, ac faucibus dui placerat quis. Donec cursus a lacus id dictum. Nulla eget tincidunt ligula, eget vulputate elit. Morbi hendrerit, orci at dapibus auctor, nunc lacus pretium velit, eu condimentum odio risus non magna. Duis sit amet nisi odio. Vivamus non facilisis sapien. </p>
+                        <p>{{about.text1}}</p>
                     </div>
                     <div class="col-lg-6">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae eros venenatis tellus faucibus tincidunt. Pellentesque in neque magna. Integer placerat purus nec rhoncus convallis. Nam et sodales mauris. Nulla gravida justo tellus, ac faucibus dui placerat quis. Donec cursus a lacus id dictum. Nulla eget tincidunt ligula, eget vulputate elit. Morbi hendrerit, orci at dapibus auctor, nunc lacus pretium velit, eu condimentum odio risus non magna. Duis sit amet nisi odio. Vivamus non facilisis sapien. </p>
+                        <p>{{about.text2}}</p>
                     </div>
                 </div>
             </div>
@@ -354,7 +354,7 @@
                 <div class="col-lg-2 team-column">
                     <div class="inner-column">
                         <div class="team-img-v2">
-                            <img src="{% static 'images/resource/team1.jpg' %}" alt="" />
+                            <img src="{{about.image5.url}}" alt="" />
                         </div>
                         <div class="team-info-v2">
                             <h3>Arbaz Ali</h3>
@@ -365,7 +365,7 @@
                 <div class="col-lg-2 team-column">
                     <div class="inner-column">
                         <div class="team-img-v2">
-                            <img src="{% static 'images/resource/team2.jpg' %}" alt="" />
+                            <img src="{{about.image6.url}}" alt="" />
                         </div>
                         <div class="team-info-v2">
                             <h3>Rohit</h3>
@@ -376,7 +376,7 @@
                 <div class="col-lg-2 team-column">
                     <div class="inner-column">
                         <div class="team-img-v2">
-                            <img src="{% static 'images/resource/team3.jpg' %}" alt="" />
+                            <img src="{{about.image7.url}}" alt="" />
                         </div>
                         <div class="team-info-v2">
                             <h3>Danish</h3>
@@ -387,7 +387,7 @@
                 <div class="col-lg-2 team-column">
                     <div class="inner-column">
                         <div class="team-img-v2">
-                            <img src="{% static 'images/resource/team4.jpg' %}" alt="" />
+                            <img src="{about.image8.url}" alt="" />
                         </div>
                         <div class="team-info-v2">
                             <h3>Rajendra</h3>
@@ -398,7 +398,7 @@
                 <div class="col-lg-2 team-column">
                     <div class="inner-column">
                         <div class="team-img-v2">
-                            <img src="{% static 'images/resource/team5.jpg' %}" alt="" />
+                            <img src="{{about.image9.url}}" alt="" />
                         </div>
                         <div class="team-info-v2">
                             <h3>Arbaz Ali</h3>
@@ -412,10 +412,10 @@
 
     <section class="marquee-section bt-0 pb-0">
         <div class='marquee' data-duration='17000' data-gap='10' data-duplicated='true' >
-            <h2>The best fashion store can deliver</h2>
+            <h2>лучшее качество вы найдете у нас</h2>
         </div>
         <div class='marquee2' data-duration='17000' data-gap='37' data-duplicated='true' >
-            <h2>The best fashion store can deliver</h2>
+            <h2>лучшее качество вы найдете у нас</h2>
         </div>
     </section>
 

@@ -79,7 +79,7 @@ admin.site.register(models.Style, StyleFilterAdmin)
 # kudbuhon's register
 @admin.register(models.About)
 class AboutAdmin(admin.ModelAdmin):
-    list_display = ['title', 'description', 'image']
+    list_display = ['title', 'description', 'mini_description', 'text1', 'text2', 'image1','image2' , 'image3' , 'image4' , 'image5' , 'image6' , 'image7', 'image8', 'image9']
 
 @admin.register(models.Faqs)
 class FaqsAdmin(admin.ModelAdmin):

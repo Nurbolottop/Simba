@@ -1,6 +1,5 @@
 from django.db import models
 
-# from cke
 # Create your models here.
 
 class Style(models.Model):
@@ -202,9 +201,60 @@ class Trends(models.Model):
    
     
 class About(models.Model):
-    title = models.CharField(max_length = 100, verbose_name = "название")
-    description = models.CharField(max_length=155, verbose_name = "описание")
-    image = models.ImageField(upload_to="image/", verbose_name="фото")
+    title = models.CharField(
+        max_length = 100, 
+        verbose_name = "название"
+    )
+    description = models.CharField(
+        max_length=155, 
+        verbose_name = "описание"
+    )
+    mini_description = models.CharField(
+        max_length=155, 
+        verbose_name = "мини описание"
+    )
+    text1 = models.TextField( 
+        verbose_name = "первый текст"
+    )
+    text2 = models.TextField( 
+        verbose_name = "второй текст"
+    )
+    image1 = models.ImageField(
+        upload_to="image/", 
+        verbose_name="фото"
+    )
+    image2 = models.ImageField(
+        upload_to="image/", 
+        verbose_name="фото"
+    )
+    image3 = models.ImageField(
+        upload_to="image/", 
+        verbose_name="фото"
+    )
+    image4 = models.ImageField(
+        upload_to="image/", 
+        verbose_name="фото"
+    )
+    image5 = models.ImageField(
+        upload_to="image/", 
+        verbose_name="фото"
+    )
+    image6 = models.ImageField(
+        upload_to="image/", 
+        verbose_name="фото"
+    )
+    image7 = models.ImageField(
+        upload_to="image/", 
+        verbose_name="фото"
+    )
+    image8 = models.ImageField(
+        upload_to="image/", 
+        verbose_name="фото"
+    )
+    image9 = models.ImageField(
+        upload_to="image/", 
+        verbose_name="фото"
+    )
     
     def __str__(self):
         return self.title
@@ -215,10 +265,24 @@ class About(models.Model):
 
 
 class Faqs(models.Model):
-    title = models.CharField(max_length = 100, verbose_name = "название")
-    description = models.CharField(max_length=155, verbose_name = "описание")
-    question = models.CharField(max_length = 155, verbose_name = "Вопрос")
-    answer = models.TextField(verbose_name = "Ответ")
+    title = models.CharField(
+        max_length = 100, 
+        verbose_name = "название"
+    )
+    description = models.CharField(
+        max_length=155, 
+        verbose_name = "описание"
+    )
+    question = models.CharField(
+        max_length = 155, 
+        verbose_name = "Вопрос"
+    )
+    answer = models.TextField(
+        verbose_name = "Ответ"
+    )
+
+    def __str__(self):
+        return self.title
 
     class Meta:
         verbose_name = "Вопрос"
