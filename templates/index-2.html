@@ -442,8 +442,8 @@
 
     <section class="main-slider-v2">
         <div class="slider-nav">
+            {% for slide in slide %}
             <div class="main-slider-slide">
-                {% for slide in slide %}
                 <img src="{{slide.image.url}}" alt=""  class="animated" data-animation-in="zoomInImage" />
                 <div class="main-slider-content">
                     <span>{{slide.mini_description}}</span>
@@ -451,8 +451,8 @@
                     <p>{{slide.descriptions}}</p>
                     <a href="shop-single.html" title="" class="theme-btn">buy now</a>
                 </div>
-                {% endfor %}
-           
+            </div>
+            {% endfor %}
         <div class="slider-dots-box"></div>
     </section><!--main-slider-->
     
@@ -460,9 +460,8 @@
     <section class="about-section-v2">
         <div class="container">
             <div class="about-content-v2">
-                <h2>Style is the  perfection</h2>
-                <h2> point of view</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus leo sit amet lorem egestas iaculis. Donec nibh enim, pharetra vel turpis non, vulputate luctus ex. Phasellus pharetra ut dolor ac rutrum. Curabitur molestie nec mi in congue. Nam luctus ante quis urna molestie, ut venenatis diam sagittis. Nam ligula velit, </p>
+                <h2>{{style.title}}</h2>
+                <p>{{style.descriptions}}</p>
                 <a href="about.html" title="" class="theme-btn">about more</a>
             </div>
         </div>
@@ -472,27 +471,15 @@
         <div class="container">
             <div class="lookbook-v2-slide">
                 <div class="lookbook-v2 row">
+                    {% for style in style.place_info.all %}
                     <div class="col-lg-3 col-md-3 col-sm-3 col-3">
                         <div class="lookbook-inner wow fadeIn" data-wow-delay="200ms">
-                            <img src="{% static 'images/resource/book1.jpg' %}" alt="" />
+                            <img src="{{style.image.url}}" alt="" />
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-3">
-                        <div class="lookbook-inner wow fadeIn" data-wow-delay="400ms">
-                            <img src="{% static 'images/resource/book2.jpg' %}" alt="" />
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-3">
-                        <div class="lookbook-inner wow fadeIn" data-wow-delay="600ms">
-                            <img src="{% static 'images/resource/book3.jpg' %}" alt="" />
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-3">
-                        <div class="lookbook-inner wow fadeIn" data-wow-delay="800ms">
-                            <img src="{% static 'images/resource/book4.jpg' %}" alt="" />
-                        </div>
-                    </div>
-
+                    {% endfor %}
+                    
+                    
                 </div>
                 <h1 class="pb-text wow slideInUp">lookbook</h1>
             </div>
@@ -508,8 +495,8 @@
     <section class="category-section-v2">
         <div class="container-full">
             <div class="sec-title space-v2 wow fadeInUp">
-                <h2>GLANCE Category</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus leo sit amet lorem egestas iaculis. Donec nibh enim, pharetra vel turpis</p>
+                <h2>{{glance.name}}</h2>
+                <p>{{glance.descriptions}}</p>
             </div>
             <div class="categories-v2">
                 <div class="swiper-container swiper3">
@@ -517,46 +504,16 @@
                         <div class="swiper-slide">
                             <div class="category-slide">
                                 <div class="row">
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="category-v2">
-                                            <div class="category-v2-img">
-                                                <img src="{% static 'images/resource/gallery1.jpg' %}" alt="" />
-                                            </div>
-                                            <h3><a href="shop-single.html" title="">Men Clothing</a></h3>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="category-v2">
-                                            <div class="category-v2-img">
-                                                <img src="{% static 'images/resource/gallery2.jpg' %}" alt="" />
-                                            </div>
-                                            <h3><a href="shop-single.html" title="">Men's Grooming</a></h3>
-                                        </div>
-                                    </div>
+                                    {% for glance in glance.glance_info.all %}
                                     <div class="col-lg-4 col-md-4">
                                         <div class="category-v2">
                                             <div class="category-v2-img">
-                                                <img src="{% static 'images/resource/gallery3.jpg' %}" alt="" />
+                                                <img src="{{glance.image.url}}" alt="" />
                                             </div>
                                             <h3><a href="shop-single.html" title="">Innerwear & Loungewear</a></h3>
                                         </div>
                                     </div>
-                                    <div class="col-lg-4 col-md-4">
-                                        <div class="category-v2">
-                                            <div class="category-v2-img">
-                                                <img src="{% static 'images/resource/gallery4.jpg' %}" alt="" />
-                                            </div>
-                                            <h3><a href="shop-single.html" title="">Accessories</a></h3>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-4">
-                                        <div class="category-v2">
-                                            <div class="category-v2-img">
-                                                <img src="{% static 'images/resource/gallery5.jpg' %}" alt="" />
-                                            </div>
-                                            <h3><a href="shop-single.html" title="">Sunglasses</a></h3>
-                                        </div>
-                                    </div>
+                                    {% endfor %}
                                 </div>
                             </div>
                         </div>
@@ -806,14 +763,15 @@
                 <h2>Sports</h2>
                 <h2 class="v2">Glance</h2>
                 <div class="product-view-slider">
+                    {% for discount in discount %}
                     <div class="product-view-slide">
                         <div class="product-card">
-                            <span>Deodorant</span>
-                            <h3><a href="shop-single.html" title="">Women's Perfume</a></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper lacus id libero porta blandit. </p>
+                            <span>{{discount.title}}</span>
+                            <h3><a href="shop-single.html" title="">{{discount.name}}</a></h3>
+                            <p>{{discount.descriptions}} </p>
                             <div class="price">
-                                <span>$25.45</span>
-                                <del>$35.00</del>
+                                <span>{{discount.now_price}}</span>
+                                <del>{{discount.before_price}}</del>
                             </div>
                             <div class="cart-items-add">
                                 <div class="quantity">
@@ -829,61 +787,11 @@
                             </div>
                         </div>
                         <div class="product-view-image">
-                            <img src="{% static 'images/resource/product-img1.png' %}" alt="" />
+                            <img src="{{discount.image.url}}" alt="" />
                         </div>
                     </div><!--product-view-slides-->
-                    <div class="product-view-slide">
-                        <div class="product-card">
-                            <span>Deodorant</span>
-                            <h3><a href="shop-single.html" title="">Women's Perfume</a></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper lacus id libero porta blandit. </p>
-                            <div class="price">
-                                <span>$25.45</span>
-                                <del>$35.00</del>
-                            </div>
-                            <div class="cart-items-add">
-                                <div class="quantity">
-                                    <button class="plus-btn" type="button" name="button">
-                                        <i class="fa fa-plus"></i>
-                                    </button>
-                                    <input type="text" name="name" value="1">
-                                    <button class="minus-btn" type="button" name="button">
-                                        <i class="fa fa-minus"></i>
-                                    </button>
-                                </div>
-                                <a href="shop-single.html" title="" class="theme-btn">buy now</a>
-                            </div>
-                        </div>
-                        <div class="product-view-image">
-                            <img src="{% static 'images/resource/product-img3.png' %}" alt="" />
-                        </div>
-                    </div><!--product-view-slides-->
-                    <div class="product-view-slide">
-                        <div class="product-card">
-                            <span>Deodorant</span>
-                            <h3><a href="shop-single.html" title="">Women's Perfume</a></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper lacus id libero porta blandit. </p>
-                            <div class="price">
-                                <span>$25.45</span>
-                                <del>$35.00</del>
-                            </div>
-                            <div class="cart-items-add">
-                                <div class="quantity">
-                                    <button class="plus-btn" type="button" name="button">
-                                        <i class="fa fa-plus"></i>
-                                    </button>
-                                    <input type="text" name="name" value="1">
-                                    <button class="minus-btn" type="button" name="button">
-                                        <i class="fa fa-minus"></i>
-                                    </button>
-                                </div>
-                                <a href="shop-single.html" title="" class="theme-btn">buy now</a>
-                            </div>
-                        </div>
-                        <div class="product-view-image">
-                            <img src="{% static 'images/resource/product-img1.png' %}" alt="" />
-                        </div>
-                    </div><!--product-view-slides-->
+                    {% endfor %}
+                   
                 </div><!--product-view-slider-->
             </div>
         </div>
@@ -898,29 +806,30 @@
     <section class="collection-section v2">
         <div class="container-fluid">
             <div class="sec-title space-v2 wow slideInUp">
-                <h2>new collection</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus leo sit amet lorem egestas iaculis. Donec nibh enim, pharetra vel turpis</p>
+                <h2>Новая коллекция</h2>
+                <p>{{collection.descriptions}}</p>
             </div>
             <div class="product-categories v2 without-slide row">
+                {% for collection in collection.collection_info.all %}
                 <div class="col-lg-2">
                     <div class="product-cat">
                         <div class="product-img">
-                            <img src="{% static 'images/resource/ct1.jpg' %}" alt="">
+                            <img src="{{collection.image.url}}" alt="">
                             <span class="pro-category">new</span>
                         </div>
                         <div class="product-hover-info">
                             <div class="product-hover-head">
                                 <ul class="pt-links">
                                     <li>new</li>
-                                    <li>sales</li>
+                                    <li>прожади</li>
                                 </ul>
                                 <a href="#" title="" class="fvrt-product"><img src="{% static 'images/icons/heart.svg' %}" alt="" /></a>
                             </div>
                             <div class="product-info-hover">
-                                <h3><a href="shop-single.html" title="">Casual Jacket</a></h3>
-                                <span>Loues Vuitto</span>
+                                <h3><a href="shop-single.html" title="">{{collection.title}}</a></h3>
+                                
                                 <div class="pricee">
-                                    <span>$25.45</span>
+                                    <span>{{collection.price}}</span>
                                 </div>
                                 <ul class="pro-colors">
                                     <li class="clr1"></li>
@@ -929,9 +838,8 @@
                                     <li class="clr4"></li>
                                 </ul>
                                 <ul class="variations">
-                                    <li>s</li>
-                                    <li>m</li>
-                                    <li>l</li>
+                                    <li>{{collection.size}}</li>
+                                    
                                 </ul>
                                 <ul class="pro-buttons">
                                     <li><a href="#" title="" class="theme-btn">quick add</a></li>
@@ -940,398 +848,13 @@
                             </div>
                         </div><!--product-hover-info-->
                         <div class="product-info">
-                            <h3><a href="shop-single.html" title="">Casual Jacket</a></h3>
-                            <span class="product-price">$25.45</span>
+                            <h3><a href="shop-single.html" title="">{{collection.title}}</a></h3>
+                            <span class="product-price">{{collection.price}}</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2">
-                    <div class="product-cat">
-                        <div class="product-img">
-                            <img src="{% static 'images/resource/ct2.jpg' %}" alt="">
-                            <span class="pro-category">new</span>
-                        </div>
-                        <div class="product-hover-info">
-                            <div class="product-hover-head">
-                                <ul class="pt-links">
-                                    <li>new</li>
-                                    <li>sales</li>
-                                </ul>
-                                <a href="#" title="" class="fvrt-product"><img src="{% static 'images/icons/heart.svg' %}" alt="" /></a>
-                            </div>
-                            <div class="product-info-hover">
-                                <h3><a href="shop-single.html" title="">Casual Jacket</a></h3>
-                                <span>Loues Vuitto</span>
-                                <div class="pricee">
-                                    <span>$25.45</span>
-                                </div>
-                                <ul class="pro-colors">
-                                    <li class="clr1"></li>
-                                    <li class="clr2"></li>
-                                    <li class="clr3"></li>
-                                    <li class="clr4"></li>
-                                </ul>
-                                <ul class="variations">
-                                    <li>s</li>
-                                    <li>m</li>
-                                    <li>l</li>
-                                </ul>
-                                <ul class="pro-buttons">
-                                    <li><a href="#" title="" class="theme-btn">quick add</a></li>
-                                    <li><a href="#" title="" class="theme-btn quick-view-btn">quick view</a></li>
-                                </ul>
-                            </div>
-                        </div><!--product-hover-info-->
-                        <div class="product-info">
-                            <h3><a href="shop-single.html" title="">Casual Jacket</a></h3>
-                            <span class="product-price">$25.45</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="product-cat">
-                        <div class="product-img">
-                            <img src="{% static 'images/resource/col1.jpg' %}" alt="">
-                            <span class="pro-category">new</span>
-                        </div>
-                        <div class="product-hover-info">
-                            <div class="product-hover-head">
-                                <ul class="pt-links">
-                                    <li>new</li>
-                                    <li>sales</li>
-                                </ul>
-                                <a href="#" title="" class="fvrt-product"><img src="{% static 'images/icons/heart.svg' %}" alt="" /></a>
-                            </div>
-                            <div class="product-info-hover">
-                                <h3><a href="shop-single.html" title="">Casual Jacket</a></h3>
-                                <span>Loues Vuitto</span>
-                                <div class="pricee">
-                                    <span>$25.45</span>
-                                </div>
-                                <ul class="pro-colors">
-                                    <li class="clr1"></li>
-                                    <li class="clr2"></li>
-                                    <li class="clr3"></li>
-                                    <li class="clr4"></li>
-                                </ul>
-                                <ul class="variations">
-                                    <li>s</li>
-                                    <li>m</li>
-                                    <li>l</li>
-                                </ul>
-                                <ul class="pro-buttons">
-                                    <li><a href="#" title="" class="theme-btn">quick add</a></li>
-                                    <li><a href="#" title="" class="theme-btn quick-view-btn">quick view</a></li>
-                                </ul>
-                            </div>
-                        </div><!--product-hover-info-->
-                        <div class="product-info">
-                            <h3><a href="shop-single.html" title="">Casual Jacket</a></h3>
-                            <span class="product-price">$25.45</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="product-cat">
-                        <div class="product-img">
-                            <img src="{% static 'images/resource/ct4.jpg' %}" alt="">
-                            <span class="pro-category">new</span>
-                        </div>
-                        <div class="product-hover-info">
-                            <div class="product-hover-head">
-                                <ul class="pt-links">
-                                    <li>new</li>
-                                    <li>sales</li>
-                                </ul>
-                                <a href="#" title="" class="fvrt-product"><img src="{% static 'images/icons/heart.svg' %}" alt="" /></a>
-                            </div>
-                            <div class="product-info-hover">
-                                <h3><a href="shop-single.html" title="">Casual Jacket</a></h3>
-                                <span>Loues Vuitto</span>
-                                <div class="pricee">
-                                    <span>$25.45</span>
-                                </div>
-                                <ul class="pro-colors">
-                                    <li class="clr1"></li>
-                                    <li class="clr2"></li>
-                                    <li class="clr3"></li>
-                                    <li class="clr4"></li>
-                                </ul>
-                                <ul class="variations">
-                                    <li>s</li>
-                                    <li>m</li>
-                                    <li>l</li>
-                                </ul>
-                                <ul class="pro-buttons">
-                                    <li><a href="#" title="" class="theme-btn">quick add</a></li>
-                                    <li><a href="#" title="" class="theme-btn quick-view-btn">quick view</a></li>
-                                </ul>
-                            </div>
-                        </div><!--product-hover-info-->
-                        <div class="product-info">
-                            <h3><a href="shop-single.html" title="">Casual Jacket</a></h3>
-                            <span class="product-price">$25.45</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="product-cat">
-                        <div class="product-img">
-                            <img src="{% static 'images/resource/ct5.jpg' %}" alt="">
-                            <span class="pro-category">new</span>
-                        </div>
-                        <div class="product-hover-info">
-                            <div class="product-hover-head">
-                                <ul class="pt-links">
-                                    <li>new</li>
-                                    <li>sales</li>
-                                </ul>
-                                <a href="#" title="" class="fvrt-product"><img src="{% static 'images/icons/heart.svg' %}" alt="" /></a>
-                            </div>
-                            <div class="product-info-hover">
-                                <h3><a href="shop-single.html" title="">Casual Jacket</a></h3>
-                                <span>Loues Vuitto</span>
-                                <div class="pricee">
-                                    <span>$25.45</span>
-                                </div>
-                                <ul class="pro-colors">
-                                    <li class="clr1"></li>
-                                    <li class="clr2"></li>
-                                    <li class="clr3"></li>
-                                    <li class="clr4"></li>
-                                </ul>
-                                <ul class="variations">
-                                    <li>s</li>
-                                    <li>m</li>
-                                    <li>l</li>
-                                </ul>
-                                <ul class="pro-buttons">
-                                    <li><a href="#" title="" class="theme-btn">quick add</a></li>
-                                    <li><a href="#" title="" class="theme-btn quick-view-btn">quick view</a></li>
-                                </ul>
-                            </div>
-                        </div><!--product-hover-info-->
-                        <div class="product-info">
-                            <h3><a href="shop-single.html" title="">Casual Jacket</a></h3>
-                            <span class="product-price">$25.45</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="product-cat">
-                        <div class="product-img">
-                            <img src="{% static 'images/resource/ct6.jpg' %}" alt="">
-                            <span class="pro-category">new</span>
-                        </div>
-                        <div class="product-hover-info">
-                            <div class="product-hover-head">
-                                <ul class="pt-links">
-                                    <li>new</li>
-                                    <li>sales</li>
-                                </ul>
-                                <a href="#" title="" class="fvrt-product"><img src="{% static 'images/icons/heart.svg' %}" alt="" /></a>
-                            </div>
-                            <div class="product-info-hover">
-                                <h3><a href="shop-single.html" title="">Casual Jacket</a></h3>
-                                <span>Loues Vuitto</span>
-                                <div class="pricee">
-                                    <span>$25.45</span>
-                                </div>
-                                <ul class="pro-colors">
-                                    <li class="clr1"></li>
-                                    <li class="clr2"></li>
-                                    <li class="clr3"></li>
-                                    <li class="clr4"></li>
-                                </ul>
-                                <ul class="variations">
-                                    <li>s</li>
-                                    <li>m</li>
-                                    <li>l</li>
-                                </ul>
-                                <ul class="pro-buttons">
-                                    <li><a href="#" title="" class="theme-btn">quick add</a></li>
-                                    <li><a href="#" title="" class="theme-btn quick-view-btn">quick view</a></li>
-                                </ul>
-                            </div>
-                        </div><!--product-hover-info-->
-                        <div class="product-info">
-                            <h3><a href="shop-single.html" title="">Casual Jacket</a></h3>
-                            <span class="product-price">$25.45</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="product-cat">
-                        <div class="product-img">
-                            <img src="{% static 'images/resource/ct7.jpg' %}" alt="">
-                            <span class="pro-category">new</span>
-                        </div>
-                        <div class="product-hover-info">
-                            <div class="product-hover-head">
-                                <ul class="pt-links">
-                                    <li>new</li>
-                                    <li>sales</li>
-                                </ul>
-                                <a href="#" title="" class="fvrt-product"><img src="{% static 'images/icons/heart.svg' %}" alt="" /></a>
-                            </div>
-                            <div class="product-info-hover">
-                                <h3><a href="shop-single.html" title="">Casual Jacket</a></h3>
-                                <span>Loues Vuitto</span>
-                                <div class="pricee">
-                                    <span>$25.45</span>
-                                </div>
-                                <ul class="pro-colors">
-                                    <li class="clr1"></li>
-                                    <li class="clr2"></li>
-                                    <li class="clr3"></li>
-                                    <li class="clr4"></li>
-                                </ul>
-                                <ul class="variations">
-                                    <li>s</li>
-                                    <li>m</li>
-                                    <li>l</li>
-                                </ul>
-                                <ul class="pro-buttons">
-                                    <li><a href="#" title="" class="theme-btn">quick add</a></li>
-                                    <li><a href="#" title="" class="theme-btn quick-view-btn">quick view</a></li>
-                                </ul>
-                            </div>
-                        </div><!--product-hover-info-->
-                        <div class="product-info">
-                            <h3><a href="shop-single.html" title="">Casual Jacket</a></h3>
-                            <span class="product-price">$25.45</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="product-cat">
-                        <div class="product-img">
-                            <img src="{% static 'images/resource/ct8.jpg' %}" alt="">
-                            <span class="pro-category">new</span>
-                        </div>
-                        <div class="product-hover-info">
-                            <div class="product-hover-head">
-                                <ul class="pt-links">
-                                    <li>new</li>
-                                    <li>sales</li>
-                                </ul>
-                                <a href="#" title="" class="fvrt-product"><img src="{% static 'images/icons/heart.svg' %}" alt="" /></a>
-                            </div>
-                            <div class="product-info-hover">
-                                <h3><a href="shop-single.html" title="">Casual Jacket</a></h3>
-                                <span>Loues Vuitto</span>
-                                <div class="pricee">
-                                    <span>$25.45</span>
-                                </div>
-                                <ul class="pro-colors">
-                                    <li class="clr1"></li>
-                                    <li class="clr2"></li>
-                                    <li class="clr3"></li>
-                                    <li class="clr4"></li>
-                                </ul>
-                                <ul class="variations">
-                                    <li>s</li>
-                                    <li>m</li>
-                                    <li>l</li>
-                                </ul>
-                                <ul class="pro-buttons">
-                                    <li><a href="#" title="" class="theme-btn">quick add</a></li>
-                                    <li><a href="#" title="" class="theme-btn quick-view-btn">quick view</a></li>
-                                </ul>
-                            </div>
-                        </div><!--product-hover-info-->
-                        <div class="product-info">
-                            <h3><a href="shop-single.html" title="">Casual Jacket</a></h3>
-                            <span class="product-price">$25.45</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="product-cat">
-                        <div class="product-img">
-                            <img src="{% static 'images/resource/ct9.jpg' %}" alt="">
-                            <span class="pro-category">new</span>
-                        </div>
-                        <div class="product-hover-info">
-                            <div class="product-hover-head">
-                                <ul class="pt-links">
-                                    <li>new</li>
-                                    <li>sales</li>
-                                </ul>
-                                <a href="#" title="" class="fvrt-product"><img src="{% static 'images/icons/heart.svg' %}" alt="" /></a>
-                            </div>
-                            <div class="product-info-hover">
-                                <h3><a href="shop-single.html" title="">Casual Jacket</a></h3>
-                                <span>Loues Vuitto</span>
-                                <div class="pricee">
-                                    <span>$25.45</span>
-                                </div>
-                                <ul class="pro-colors">
-                                    <li class="clr1"></li>
-                                    <li class="clr2"></li>
-                                    <li class="clr3"></li>
-                                    <li class="clr4"></li>
-                                </ul>
-                                <ul class="variations">
-                                    <li>s</li>
-                                    <li>m</li>
-                                    <li>l</li>
-                                </ul>
-                                <ul class="pro-buttons">
-                                    <li><a href="#" title="" class="theme-btn">quick add</a></li>
-                                    <li><a href="#" title="" class="theme-btn quick-view-btn">quick view</a></li>
-                                </ul>
-                            </div>
-                        </div><!--product-hover-info-->
-                        <div class="product-info">
-                            <h3><a href="shop-single.html" title="">Casual Jacket</a></h3>
-                            <span class="product-price">$25.45</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="product-cat">
-                        <div class="product-img">
-                            <img src="{% static 'images/resource/ct10.jpg' %}" alt="">
-                            <span class="pro-category">new</span>
-                        </div>
-                        <div class="product-hover-info">
-                            <div class="product-hover-head">
-                                <ul class="pt-links">
-                                    <li>new</li>
-                                    <li>sales</li>
-                                </ul>
-                                <a href="#" title="" class="fvrt-product"><img src="{% static 'images/icons/heart.svg' %}" alt="" /></a>
-                            </div>
-                            <div class="product-info-hover">
-                                <h3><a href="shop-single.html" title="">Casual Jacket</a></h3>
-                                <span>Loues Vuitto</span>
-                                <div class="pricee">
-                                    <span>$25.45</span>
-                                </div>
-                                <ul class="pro-colors">
-                                    <li class="clr1"></li>
-                                    <li class="clr2"></li>
-                                    <li class="clr3"></li>
-                                    <li class="clr4"></li>
-                                </ul>
-                                <ul class="variations">
-                                    <li>s</li>
-                                    <li>m</li>
-                                    <li>l</li>
-                                </ul>
-                                <ul class="pro-buttons">
-                                    <li><a href="#" title="" class="theme-btn">quick add</a></li>
-                                    <li><a href="#" title="" class="theme-btn quick-view-btn">quick view</a></li>
-                                </ul>
-                            </div>
-                        </div><!--product-hover-info-->
-                        <div class="product-info">
-                            <h3><a href="shop-single.html" title="">Casual Jacket</a></h3>
-                            <span class="product-price">$25.45</span>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
+
             </div>
         </div>
     </section><!--collection-section-->
@@ -1346,64 +869,22 @@
     <section class="testimonial-section-v2">
         <div class="container-full">
             <div class="sec-title space-v2 wow fadeInUp">
-                <h2>client testimonials</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus leo sit amet lorem egestas iaculis. Donec nibh enim, pharetra vel turpis</p>
+                <h2>Отзывы клиентов</h2>
+                <p>{{testimonials.mini_descriptions}}</p>
             </div>
             <div class="row testi-v2-slider wow slideInUp">
+                {% for testimonials in testimonials.testimonials_info.all  %}
                 <div class="col-lg-4">
                     <div class="testi2-slide">
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. In luctus leo sit amet lorem egestas iaculis. Donec nibh enim, pharetra vel turpis</p>
+                        <p>{{testimonials.testimonial}}</p>
                         <div class="testi2-info">
-                            <img src="{% static 'images/resource/author1.png' %}" alt="" />
-                            <h4>Arbaz Ali</h4>
+                            <img src="{{testimonials.image.url}}" alt="" />
+                            <h4>{{testimonials.name}}</h4>
                         </div>
                     </div><!--testi2-slide-->
                 </div>
-                <div class="col-lg-4">
-                    <div class="testi2-slide">
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. In luctus leo sit amet lorem egestas iaculis. Donec nibh enim, pharetra vel turpis</p>
-                        <div class="testi2-info">
-                            <img src="{% static 'images/resource/author2.png' %}" alt="" />
-                            <h4>Arbaz Ali</h4>
-                        </div>
-                    </div><!--testi2-slide-->
-                </div>
-                <div class="col-lg-4">
-                    <div class="testi2-slide">
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. In luctus leo sit amet lorem egestas iaculis. Donec nibh enim, pharetra vel turpis</p>
-                        <div class="testi2-info">
-                            <img src="{% static 'images/resource/author3.png' %}" alt="" />
-                            <h4>Arbaz Ali</h4>
-                        </div>
-                    </div><!--testi2-slide-->
-                </div>
-                <div class="col-lg-4">
-                    <div class="testi2-slide">
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. In luctus leo sit amet lorem egestas iaculis. Donec nibh enim, pharetra vel turpis</p>
-                        <div class="testi2-info">
-                            <img src="{% static 'images/resource/author1.png' %}" alt="" />
-                            <h4>Arbaz Ali</h4>
-                        </div>
-                    </div><!--testi2-slide-->
-                </div>
-                <div class="col-lg-4">
-                    <div class="testi2-slide">
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. In luctus leo sit amet lorem egestas iaculis. Donec nibh enim, pharetra vel turpis</p>
-                        <div class="testi2-info">
-                            <img src="{% static 'images/resource/author2.png' %}" alt="" />
-                            <h4>Arbaz Ali</h4>
-                        </div>
-                    </div><!--testi2-slide-->
-                </div>
-                <div class="col-lg-4">
-                    <div class="testi2-slide">
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. In luctus leo sit amet lorem egestas iaculis. Donec nibh enim, pharetra vel turpis</p>
-                        <div class="testi2-info">
-                            <img src="{% static 'images/resource/author3.png' %}" alt="" />
-                            <h4>Arbaz Ali</h4>
-                        </div>
-                    </div><!--testi2-slide-->
-                </div>
+                {% endfor %}
+           
             </div>
         </div>
     </section><!--testimonial-section-v2-->
@@ -1411,21 +892,21 @@
     <section class="trending-section-v2">
         <div class="container">
             <div class="sec-title space-v2 wow fadeInUp">
-                <h2>trending of the week</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus leo sit amet lorem egestas iaculis. Donec nibh enim, pharetra vel turpis</p>
+                <h2>ТРЕНДЫ НЕДЕЛИ</h2>
+                <p>{{trend.first_descrip}}</p>
             </div>
             <div class="trending-slider wow slideInUp">
                 <div class="trending-slide">
                     <div class="trending-img">
-                        <img src="{% static 'images/resource/trending1.jpg' %}" alt="" />
+                        <img src="{{trend.image.url}}" alt="" />
                         <div class="trending-caption-v2">
                             <div class="trending-thumb">
-                                <img src="{% static 'images/resource/trending2.jpg' %}" alt="" />
+                                <img src="{{trend.card_image.url}}" alt="" />
                             </div>
-                            <h3><a href="shop-single.html" title="">Sunglasses</a></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur </p>
+                            <h3><a href="shop-single.html" title="">{{trend.title}}</a></h3>
+                            <p>{{trend.descriptions}}</p>
                             <div class="price">
-                                <span>$25.45 <del>$35.00</del></span>
+                                <span>{{trend.now_price}} <del>{{trend.before_price}} </del></span>
                             </div>
                         </div>
                     </div>
@@ -1434,55 +915,16 @@
                         <div class="featured-hover">
                             <span class="hvr"></span>
                             <div class="hvr-content">
-                                <h3><a href="shop-single.html" title="">Casual Jacket</a></h3>
-                                <span class="price">$25.45</span>
+                                <h3><a href="shop-single.html" title="">{{trend.title}}</a></h3>
+                                <span class="price">{{trend.now_price}}</span>
                                 <ul class="varies">
-                                    <li>S</li>
-                                    <li>m</li>
-                                    <li>l</li>
+                                    <li>{{trend.size}}</li>
+                                    
                                 </ul>
                                 <a href="#" title="" class="quick-add">quick add</a>
                             </div>
                         </div>
-                        <div class="featured-hover v2">
-                            <span class="hvr"></span>
-                            <div class="hvr-content">
-                                <h3><a href="shop-single.html" title="">Casual Jacket</a></h3>
-                                <span class="price">$25.45</span>
-                                <ul class="varies">
-                                    <li>S</li>
-                                    <li>m</li>
-                                    <li>l</li>
-                                </ul>
-                                <a href="#" title="" class="quick-add">quick add</a>
-                            </div>
-                        </div>
-                        <div class="featured-hover v3">
-                            <span class="hvr"></span>
-                            <div class="hvr-content">
-                                <h3><a href="shop-single.html" title="">Casual Jacket</a></h3>
-                                <span class="price">$25.45</span>
-                                <ul class="varies">
-                                    <li>S</li>
-                                    <li>m</li>
-                                    <li>l</li>
-                                </ul>
-                                <a href="#" title="" class="quick-add">quick add</a>
-                            </div>
-                        </div>
-                        <div class="featured-hover v5">
-                            <span class="hvr"></span>
-                            <div class="hvr-content">
-                                <h3><a href="shop-single.html" title="">Casual Jacket</a></h3>
-                                <span class="price">$25.45</span>
-                                <ul class="varies">
-                                    <li>S</li>
-                                    <li>m</li>
-                                    <li>l</li>
-                                </ul>
-                                <a href="#" title="" class="quick-add">quick add</a>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -1493,21 +935,11 @@
     <section class="brand-section v2">
         <div class="container">
             <div class="pt-logos">
+                {% for partner in partner %}
                 <div class="pt-logo wow fadeIn">
-                    <img src="{% static 'images/resource/pt1.png' %}" alt="" />
+                    <img src="{{partner.image.url}}" alt="" />
                 </div>
-                <div class="pt-logo wow fadeIn" data-wow-delay="300ms">
-                    <img src="{% static 'images/resource/pt2.png' %}" alt="" />
-                </div>
-                <div class="pt-logo wow fadeIn" data-wow-delay="500ms">
-                    <img src="{% static 'images/resource/pt3.png' %}" alt="" />
-                </div>
-                <div class="pt-logo wow fadeIn" data-wow-delay="700ms">
-                    <img src="{% static 'images/resource/pt4.png' %}" alt="" />
-                </div>
-                <div class="pt-logo wow fadeIn" data-wow-delay="900ms">
-                    <img src="{% static 'images/resource/pt5.png' %}" alt="" />
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section><!--brand-section-->
@@ -1515,63 +947,27 @@
     <section class="collection-new">
         <div class="container-fluid">
             <div class="title-clt wow slideInUp">
-                <h2>The joy <img src="{% static 'images/resource/cl1.png' %}" alt="" /> of dressing <img src="{% static 'images/resource/cl2.png' %}" alt="" /> is an art</h2>
+                <h2>Радость </h2>
+                <h2> как искусство</h2>
             </div>
             <div class="flex-container wow slideInUp">
+                {% for art in art %}
                 <div class="flex-slide accessories">
-                    <h2>accessories</h2>
+                    <h2>{{art.part}}</h2>
                     <div class="flex-content">
-                        <h3>Blazer</h3>
-                        <p>Lorem ipsum dolor sit consectetur adipiscing elit.</p>
-                        <a href="shop-single.html" title="" class="theme-btn">shop now</a>
+                        <h3>{{art.name}}</h3>
+                        <p>{{art.descriptions}}</p>
+                        <a href="shop-single.html" title="" class="theme-btn">купить</a>
                     </div>
                 </div>
-                <div class="flex-slide fashion">
-                    <h2>fashion</h2>
-                    <div class="flex-content">
-                        <h3>Blazer</h3>
-                        <p>Lorem ipsum dolor sit consectetur adipiscing elit.</p>
-                        <a href="shop-single.html" title="" class="theme-btn">shop now</a>
-                    </div>
-                </div>
-                <div class="flex-slide sneekers">
-                    <h2>sneakers</h2>
-                    <div class="flex-content">
-                        <h3>Blazer</h3>
-                        <p>Lorem ipsum dolor sit consectetur adipiscing elit.</p>
-                        <a href="shop-single.html" title="" class="theme-btn">shop now</a>
-                    </div>
-                </div>
-                <div class="flex-slide blazer">
-                    <h2>Blazer</h2>
-                    <div class="flex-content">
-                        <h3>Blazer</h3>
-                        <p>Lorem ipsum dolor sit consectetur adipiscing elit.</p>
-                        <a href="shop-single.html" title="" class="theme-btn">shop now</a>
-                    </div>
-                </div>
-                <div class="flex-slide polo">
-                    <h2>Polo shirt</h2>
-                    <div class="flex-content">
-                        <h3>Blazer</h3>
-                        <p>Lorem ipsum dolor sit consectetur adipiscing elit.</p>
-                        <a href="shop-single.html" title="" class="theme-btn">shop now</a>
-                    </div>
-                </div>
-                <div class="flex-slide bag">
-                    <h2>Hand bag</h2>
-                    <div class="flex-content">
-                        <h3>Blazer</h3>
-                        <p>Lorem ipsum dolor sit consectetur adipiscing elit.</p>
-                        <a href="shop-single.html" title="" class="theme-btn">shop now</a>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section> 
     <section class="marquee-section v2 web-slides">
         <div class='marquee6' data-duration='17000' data-gap='10' data-duplicated='true' >
-            <h2>The best fashion store can deliver</h2>
+            <h2>
+                Лучший модный магазин может доставить</h2>
         </div>
     </section>
     <section class="cart-section-v2">

@@ -16,16 +16,16 @@ from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+load_dotenv(BASE_DIR/ '.env')
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-load_dotenv(BASE_DIR/ '.env')
-SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
+SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = os.environ.get('DEBUG')
 
 ALLOWED_HOSTS = []
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'ckeditor',
 
 #apps
     'apps.base',
@@ -50,6 +51,7 @@ INSTALLED_APPS = [
 
 
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -137,3 +139,74 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# JAZZMIN
+
+JAZZMIN_SETTINGS = {
+    "site_title": "Nurzaman",  # Заголовок сайта
+    "site_header": "Nurzaman",  # Заголовок на экране входа
+    "site_brand": "Администрация Сайта",  # Выходит на сайте вместо Django-admin.(Администрирование сайта)
+    "welcome_sign": "Welcome to the Hich Shcool Nurzaman",  # Приветственный текст на экране входа
+    "copyright": "Nurzaman",  # Авторское право (footer)
+    "search_model": ["auth.User", "apps.teachers"],
+    # Для поиска пользователей или группы
+
+    "topmenu_links": [
+
+        # Url that gets reversed (Permissions can be added)
+        {"name": "Home", "url": "admin:index", "permissions": ["auth.view_user"]},
+
+        # external url that opens in a new window (Permissions can be added)
+        # telega
+        {"name": "Support", "url": "https://t.me/Abdykadyrov_S", "new_window": True},
+
+        {"name": "Support(Технический)", "url": "https://t.me/islaw_BT", "new_window": True},
+        # model admin to link to (Permissions checked against model)
+        {"model": "auth.User"},
+
+        # App with dropdown menu to all its models pages (Permissions checked against models)
+        {"app": "books"},
+    ],
+
+    "show_sidebar": True,
+
+    "changeform_format": "horizontal_tabs",
+
+}
+
+# Выбрал только то что мне понравилось если что можем поменять тему
+JAZZMIN_UI_TWEAKS = {
+    # белый фон:
+    # "theme": "flatly",
+    # "theme" : "simplex",  # белый фон с цветами - RGB
+    # "theme": "sketchy",     #  мультяшный
+
+    # темный фон:
+    "theme": "darkly",
+    #"theme": "slate",    # темный (серьезный , полностью)
+
+}
+
+
+
+EMAIL_USE_TLS = True  # Использовать TLS для защищенного соединения
+EMAIL_HOST = 'smtp.gmail.com'  # Адрес SMTP сервера Gmail
+EMAIL_PORT = 587  # Порт для подключения к SMTP серверу Gmail
+EMAIL_HOST_USER = 'nuraj9663@gmail.com'
+EMAIL_HOST_PASSWORD = 'ваш пароль'
+
+
+
+# CKEDITOR
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'  # URL to jQuery
+CKEDITOR_IMAGE_BACKEND = "pillow"  # Путь к пакету Pillow для обработки изображений
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',  # Вы можете настроить свою собственную панель инструментов CKEditor
+        'height': 300,
+        'width': 800,
+    },
+}
