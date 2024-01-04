@@ -13,15 +13,13 @@ class StyleFilterAdmin(admin.ModelAdmin):
     search_fields = ('title', 'descriptions')
     inlines = [StyleInfoInline]
 
-class GlanceInfoInline(admin.TabularInline):
-    model = models.GlanceInfo
-    extra = 1
+
 
 class GlanceFilterAdmin(admin.ModelAdmin):
     list_filter = ('name', )
     list_display = ('name', 'descriptions')
     search_fields = ('name', 'descriptions')
-    inlines = [GlanceInfoInline]
+   
 
 
 class DiscountFilterAdmin(admin.ModelAdmin):
@@ -67,7 +65,7 @@ admin.site.register(models.News, LastNewsFilterAdmin)
 admin.site.register(models.ClothesColor, ClothesFilterAdmin)
 admin.site.register(models.Art)
 admin.site.register(models.Partner)
-admin.site.register(models.Trends)
+admin.site.register(models.Trends)      
 admin.site.register(models.Testimonials, TestimonialsFilterAdmin)
 admin.site.register(models.Collection, CollectionFilterAdmin)
 admin.site.register(models.Discount, DiscountFilterAdmin)

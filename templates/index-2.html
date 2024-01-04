@@ -238,19 +238,19 @@
                 <a href="#" title="">Home</a>
                 <ul>
                     <li>
-                        <a href="index.html" title="">women</a>
+                        <a href="index.html" title="">Женщина</a>
                     </li>
                     <li>
-                        <a href="index-2.html" title="">man</a>
+                        <a href="index-2.html" title="">Мужчина</a>
                     </li>
                     <li>
-                        <a href="index-3.html" title="">kids</a>
+                        <a href="index-3.html" title="">Дети</a>
                     </li>
                     <li>
-                        <a href="index_4.html" title="">Electric</a>
+                        <a href="index_4.html" title="">Элестроника</a>
                     </li>
                     <li>
-                        <a href="index_5.html" title="">furniture</a>
+                        <a href="index_5.html" title="">Мебель</a>
                     </li>
                 </ul>
             </li>
@@ -286,12 +286,12 @@
         </ul>
         <div class='marquee3' data-duration='60000' data-gap='0' data-duplicated='true' >
             <ul>
-                <li>Glance</li>
-                <li>Glance</li>
-                <li>Glance</li>
-                <li>Glance</li>
-                <li>Glance</li>
-                <li>Glance</li>
+                <li>SIMBA</li>
+                <li>SIMBA</li>
+                <li>SIMBA</li>
+                <li>SIMBA</li>
+                <li>SIMBA</li>
+                <li>SIMBA</li>
             </ul>
         </div>
     </div><!--overlay-menu-->
@@ -504,16 +504,16 @@
                         <div class="swiper-slide">
                             <div class="category-slide">
                                 <div class="row">
-                                    {% for glance in glance.glance_info.all %}
+                                    
                                     <div class="col-lg-4 col-md-4">
                                         <div class="category-v2">
                                             <div class="category-v2-img">
-                                                <img src="{{glance.image.url}}" alt="" />
+                                                <img src="{{glance.image1.url}}" alt="" />
                                             </div>
-                                            <h3><a href="shop-single.html" title="">Innerwear & Loungewear</a></h3>
+                                            <h3><a href="shop-single.html" title="">{{glance.title1}}</a></h3>
                                         </div>
                                     </div>
-                                    {% endfor %}
+                                 
                                 </div>
                             </div>
                         </div>
@@ -523,7 +523,7 @@
                                     <div class="col-lg-6 col-md-6">
                                         <div class="category-v2">
                                             <div class="category-v2-img">
-                                                <img src="{% static 'images/resource/gallery1.jpg' %}" alt="" />
+                                                <img src="{{glance.image2.url}}" alt="" />
                                             </div>
                                             <h3><a href="shop-single.html" title="">Men Clothing</a></h3>
                                         </div>
@@ -783,7 +783,7 @@
                                         <i class="fa fa-minus"></i>
                                     </button>
                                 </div>
-                                <a href="shop-single.html" title="" class="theme-btn">buy now</a>
+                                <a href="shop-single.html" title="" class="theme-btn">Купить</a>
                             </div>
                         </div>
                         <div class="product-view-image">
@@ -911,7 +911,7 @@
                         </div>
                     </div>
                     <div class="trending-img-v2">
-                        <img src="{% static 'images/resource/trending3.png' %}" alt="" />
+                        <img src="{{trend.goods.url}}" alt="" />
                         <div class="featured-hover">
                             <span class="hvr"></span>
                             <div class="hvr-content">

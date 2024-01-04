@@ -35,6 +35,43 @@ class Glance(models.Model):
     descriptions = models.TextField(
         verbose_name = 'Описание'
     )
+    image1 = models.ImageField(
+        verbose_name = 'Фотография сверху',
+    )
+    title1 = models.CharField(
+        max_length = 255,
+        verbose_name = "Название"
+    )
+    image2 = models.ImageField(
+        verbose_name = 'Фотография сверху',
+    )
+    title2 = models.CharField(
+        max_length = 255,
+        verbose_name = "Название"
+    )
+    image3 = models.ImageField(
+        verbose_name = 'Фотография сверху',
+    )
+    title3 = models.CharField(
+        max_length = 255,
+        verbose_name = "Название"
+    )
+    image4 = models.ImageField(
+        verbose_name = 'Фотография сверху',
+    )
+    title4 = models.CharField(
+        max_length = 255,
+        verbose_name = "Название"
+    )
+    image5 = models.ImageField(
+        verbose_name = 'Фотография сверху',
+    )
+    title5 = models.CharField(
+        max_length = 255,
+        verbose_name = "Название"
+    )
+    
+
 
     def __str__(self):
         return self.name
@@ -43,20 +80,7 @@ class Glance(models.Model):
         verbose_name = 'Категория взгляда'
         verbose_name_plural = 'Категории взгляда'
 
-class GlanceInfo(models.Model):
-    place_info = models.ForeignKey(Glance,related_name = "glance_info", on_delete  = models.CASCADE )
-    image = models.ImageField(
-        verbose_name = 'Фотография сверху',
-    )
-    title = models.CharField(
-        max_length = 255,
-        verbose_name = "Название"
-    )
-    def __str__(self):
-        return self.title
-    class Meta:
-        unique_together = ('place_info', 'image')
-  
+
 
 class Discount(models.Model):
     image = models.ImageField(
