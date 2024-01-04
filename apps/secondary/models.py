@@ -30,45 +30,57 @@ class StyleInfo(models.Model):
 class Glance(models.Model):
     name = models.CharField(
         max_length =255,
-        verbose_name = 'Название'
+        verbose_name = 'Название',
+        blank=True, null= True
     )
     descriptions = models.TextField(
-        verbose_name = 'Описание'
+        verbose_name = 'Описание',
+        blank=True, null= True
     )
     image1 = models.ImageField(
         verbose_name = 'Фотография сверху',
+        blank=True, null= True
     )
     title1 = models.CharField(
         max_length = 255,
-        verbose_name = "Название"
+        verbose_name = "Название",
+        blank=True, null= True
     )
     image2 = models.ImageField(
         verbose_name = 'Фотография сверху',
+        blank=True, null= True
     )
     title2 = models.CharField(
         max_length = 255,
-        verbose_name = "Название"
+        verbose_name = "Название",
+        blank=True, null= True
     )
     image3 = models.ImageField(
         verbose_name = 'Фотография сверху',
+        blank=True, null= True
     )
     title3 = models.CharField(
         max_length = 255,
-        verbose_name = "Название"
+        verbose_name = "Название",
+        blank=True, null= True
     )
     image4 = models.ImageField(
         verbose_name = 'Фотография сверху',
+        blank=True, null= True
     )
     title4 = models.CharField(
         max_length = 255,
-        verbose_name = "Название"
+        verbose_name = "Название",
+        blank=True, null= True
     )
     image5 = models.ImageField(
         verbose_name = 'Фотография сверху',
+        blank=True, null= True
     )
     title5 = models.CharField(
         max_length = 255,
-        verbose_name = "Название"
+        verbose_name = "Название",
+        blank=True, null= True
     )
     
 
