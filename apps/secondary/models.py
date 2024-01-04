@@ -415,7 +415,7 @@ class NewsInline(models.Model):
         verbose_name='Фотография'
     )
     mini_descriptions =RichTextField(
-        max_length =255,
+        max_length =255,  
         verbose_name = 'Мини описание'
     )
     created_at = models.DateTimeField(
