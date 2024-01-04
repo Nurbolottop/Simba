@@ -1,14 +1,19 @@
 from django.db import models
+from django_resized.forms import ResizedImageField
 # Create your models here.
 class Settings(models.Model):
-    logo = models.ImageField(
+    logo = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
         upload_to='image_logo',
         verbose_name = 'Логотип'
     )
 
 
 class Slide(models.Model):
-    image = models.ImageField(
+    image = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
         upload_to='slide_image',
         verbose_name='Фотография'
     )

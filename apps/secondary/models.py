@@ -1,7 +1,6 @@
 from django.db import models
 from ckeditor.fields import RichTextField
 from django_resized.forms import ResizedImageField
-
 # Create your models here.
 
 class Style(models.Model):
@@ -22,8 +21,12 @@ class Style(models.Model):
 
 class StyleInfo(models.Model):
     place_info = models.ForeignKey(Style,related_name = "place_info", on_delete  = models.CASCADE )
-    image = models.ImageField(
-        verbose_name = 'Фотография',
+    image = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
+        upload_to='price/',
+        verbose_name="фотография",
+        blank = True, null = True
     )
 
     class Meta:
@@ -39,7 +42,10 @@ class Glance(models.Model):
         verbose_name = 'Описание',
         blank=True, null= True
     )
-    image1 = models.ImageField(
+    image1 = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
+        upload_to='price/',
         verbose_name = 'Фотография сверху',
         blank=True, null= True
     )
@@ -48,7 +54,10 @@ class Glance(models.Model):
         verbose_name = "Название",
         blank=True, null= True
     )
-    image2 = models.ImageField(
+    image2 = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
+        upload_to='price/',
         verbose_name = 'Фотография сверху',
         blank=True, null= True
     )
@@ -57,7 +66,10 @@ class Glance(models.Model):
         verbose_name = "Название",
         blank=True, null= True
     )
-    image3 = models.ImageField(
+    image3 = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
+        upload_to='image/',
         verbose_name = 'Фотография сверху',
         blank=True, null= True
     )
@@ -66,7 +78,10 @@ class Glance(models.Model):
         verbose_name = "Название",
         blank=True, null= True
     )
-    image4 = models.ImageField(
+    image4 = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
+        upload_to='image/',
         verbose_name = 'Фотография сверху',
         blank=True, null= True
     )
@@ -75,7 +90,10 @@ class Glance(models.Model):
         verbose_name = "Название",
         blank=True, null= True
     )
-    image5 = models.ImageField(
+    image5 = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
+        upload_to='image/',
         verbose_name = 'Фотография сверху',
         blank=True, null= True
     )
@@ -97,7 +115,10 @@ class Glance(models.Model):
 
 
 class Discount(models.Model):
-    image = models.ImageField(
+    image = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
+        
         upload_to='image_goods',
         verbose_name='Фотография'
     )
@@ -144,7 +165,10 @@ class Collection(models.Model):
 
 class CollectionInline(models.Model):
     place_info = models.ForeignKey(Collection,related_name = "collection_info", on_delete  = models.CASCADE )
-    image = models.ImageField(
+    image = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
+        upload_to='up_photo/',
         verbose_name = 'Фотография сверху',
     )
     title = models.CharField(
@@ -179,7 +203,9 @@ class Testimonials(models.Model):
 
 class TestimonialsInline(models.Model):
     place_info = models.ForeignKey(Testimonials,related_name = "testimonials_info", on_delete  = models.CASCADE )
-    image = models.ImageField(
+    image = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
         upload_to='testimonials/image',
         verbose_name='Фото клиентов'
     )
@@ -199,15 +225,21 @@ class Trends(models.Model):
     first_descrip = RichTextField(
         verbose_name = 'Главное описание'
     )
-    image = models.ImageField(
+    image =ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
         upload_to='trends_image/',
         verbose_name='Большое фото'
     )
-    goods = models.ImageField(
+    goods = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
         upload_to='goods/trend/image',
         verbose_name='Фото товара'
     )
-    card_image = models.ImageField(
+    card_image = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
         upload_to='card_image/',
         verbose_name='Фото внутри карточки'
     )
@@ -257,39 +289,57 @@ class About(models.Model):
     text2 =RichTextField( 
         verbose_name = "второй текст"
     )
-    image1 = models.ImageField(
+    image1 = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
         upload_to="image/", 
         verbose_name="фото"
     )
-    image2 = models.ImageField(
+    image2 = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
         upload_to="image/", 
         verbose_name="фото"
     )
-    image3 = models.ImageField(
+    image3 = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
         upload_to="image/", 
         verbose_name="фото"
     )
-    image4 = models.ImageField(
+    image4 = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
         upload_to="image/", 
         verbose_name="фото"
     )
-    image5 = models.ImageField(
+    image5 = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
         upload_to="image/", 
         verbose_name="фото"
     )
-    image6 = models.ImageField(
+    image6 = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
         upload_to="image/", 
         verbose_name="фото"
     )
-    image7 = models.ImageField(
+    image7 = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
         upload_to="image/", 
         verbose_name="фото"
     )
-    image8 = models.ImageField(
+    image8 = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
         upload_to="image/", 
         verbose_name="фото"
     )
-    image9 = models.ImageField(
+    image9 = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
         upload_to="image/", 
         verbose_name="фото"
     )
@@ -329,7 +379,9 @@ class Faqs(models.Model):
    
 
 class Partner(models.Model):
-    image = models.ImageField(
+    image = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
         upload_to='partner_image/',
         verbose_name='Фотография '
     )
@@ -360,17 +412,23 @@ class Art(models.Model):
 
 
 class ClothesColor(models.Model):
-    image1 = models.ImageField(
+    image1 = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
         upload_to='color_image1/',
         verbose_name='Фото для рассветки 1 ',
         blank=True, null=True
     )
-    image2 = models.ImageField(
+    image2 = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
         upload_to='color_image2/',
         verbose_name='Фото  для рассветки 2',
         blank=True, null=True
     )
-    image3 = models.ImageField(
+    image3 = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
         upload_to='color_image3/',
         verbose_name='Фото  для рассветки 3',
         blank=True, null=True
@@ -412,7 +470,9 @@ class News(models.Model):
 
 class NewsInline(models.Model):
     place_info = models.ForeignKey(News,related_name = "lastnews_info", on_delete  = models.CASCADE )
-    image = models.ImageField(
+    image = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
         upload_to='news_image/',
         verbose_name='Фотография'
     )
