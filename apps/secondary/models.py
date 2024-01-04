@@ -7,7 +7,7 @@ class Style(models.Model):
         max_length = 255,
         verbose_name = "Название"
     )
-    descriptions = models.TextField(
+    descriptions = RichTextField(
         verbose_name = 'Описание'
     )
 
@@ -33,7 +33,7 @@ class Glance(models.Model):
         verbose_name = 'Название',
         blank=True, null= True
     )
-    descriptions = models.TextField(
+    descriptions = RichTextField(
         verbose_name = 'Описание',
         blank=True, null= True
     )
@@ -107,7 +107,7 @@ class Discount(models.Model):
         max_length = 255,
         verbose_name = 'Название'
     )
-    descriptions = models.TextField(
+    descriptions = RichTextField(
         verbose_name = 'Описание'
     )
     now_price = models.CharField(
@@ -128,7 +128,7 @@ class Discount(models.Model):
 
 
 class Collection(models.Model):
-    descriptions = models.TextField(
+    descriptions =RichTextField(
         verbose_name = 'Описание'
     )
     
@@ -163,7 +163,7 @@ class CollectionInline(models.Model):
         unique_together = ('place_info', 'image')
 
 class Testimonials(models.Model):
-    mini_descriptions = models.TextField(
+    mini_descriptions = RichTextField(
         max_length =255,
         verbose_name = 'Мини описание'
     )
@@ -181,7 +181,7 @@ class TestimonialsInline(models.Model):
         upload_to='testimonials/image',
         verbose_name='Фото клиентов'
     )
-    testimonial = models.TextField(
+    testimonial = RichTextField(
         verbose_name = 'Отзыв'
     )
     name = models.CharField(
@@ -194,7 +194,7 @@ class TestimonialsInline(models.Model):
         unique_together = ('place_info', 'image')
     
 class Trends(models.Model):
-    first_descrip = models.TextField(
+    first_descrip = RichTextField(
         verbose_name = 'Главное описание'
     )
     image = models.ImageField(
@@ -213,7 +213,7 @@ class Trends(models.Model):
         max_length = 255,
         verbose_name = 'Название товара'
     )
-    descriptions = models.TextField(
+    descriptions =RichTextField(
         verbose_name = 'Описание товара'
     )
     now_price = models.CharField(
@@ -249,10 +249,10 @@ class About(models.Model):
         max_length=155, 
         verbose_name = "мини описание"
     )
-    text1 = models.TextField( 
+    text1 =RichTextField( 
         verbose_name = "первый текст"
     )
-    text2 = models.TextField( 
+    text2 =RichTextField( 
         verbose_name = "второй текст"
     )
     image1 = models.ImageField(
@@ -313,7 +313,7 @@ class Faqs(models.Model):
         max_length = 155, 
         verbose_name = "Вопрос"
     )
-    answer = models.TextField(
+    answer =RichTextField(
         verbose_name = "Ответ"
     )
 
@@ -345,7 +345,7 @@ class Art(models.Model):
         max_length = 255,
         verbose_name = 'Имя'
     )
-    descriptions = models.TextField(
+    descriptions =RichTextField(
         verbose_name = 'Описание товара'
     )
     
@@ -377,7 +377,7 @@ class ClothesColor(models.Model):
         max_length = 255,
         verbose_name = 'Название товара'
     )
-    descriptions = models.TextField(
+    descriptions =RichTextField(
         verbose_name = 'Описание'
     )
     now_price = models.CharField(
@@ -397,7 +397,7 @@ class ClothesColor(models.Model):
         verbose_name_plural = 'Одежды с рассветками'
 
 class News(models.Model):
-    descriptions = models.TextField(
+    descriptions =RichTextField(
         verbose_name = 'Описание'
     )
     def __str__(self):
@@ -414,7 +414,7 @@ class NewsInline(models.Model):
         upload_to='news_image/',
         verbose_name='Фотография'
     )
-    mini_descriptions = models.TextField(
+    mini_descriptions =RichTextField(
         max_length =255,
         verbose_name = 'Мини описание'
     )
